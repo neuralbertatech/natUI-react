@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "indent": ["error", 2],
+    "prefer-const": 1,
+    "comma-style": ["error", "last"],
+    "quotes": ["warn", "double"],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "no-unused-vars": 2,
+    "no-eval": 2,
+    "no-else-return": 2,
+    "no-empty": "error",
+    "no-extra-semi": "error",
+    "semi": ["error", "always"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "@neuralbertatech/react",
+  "version": "0.0.1",
+  "description": "UI react framework built on top of natUI.",
+  "keywords": [
+    "natUI",
+    "neuralbertatech",
+    "react",
+    "framework",
+    "ui"
+  ],
+  "homepage": "https://github.com/neuralbertatech/natUI-react",
+  "bugs": {
+    "url": "https://github.com/neuralbertatech/natUI-react/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "lib/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": "github:neuralbertatech/natUI-react",
+  "scripts": {},
+  "dependencies": {
+    "@neuralbertatech/ui": "^0.1.3",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.23",
+    "@types/react": "^18.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "typescript": "^4.8.4"
+  }
+}
