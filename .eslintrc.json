@@ -4,7 +4,6 @@
   "plugins": [
     "@typescript-eslint"
   ],
-  "extends": "next/core-web-vitals",
   "rules": {
     "indent": ["error", 2],
     "prefer-const": 1,
