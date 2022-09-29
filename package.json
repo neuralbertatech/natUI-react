@@ -21,11 +21,12 @@
   ],
   "repository": "github:neuralbertatech/natUI-react",
   "scripts": {
+    "dev": "tsc -w",
     "build": "tsc",
     "lint": "eslint src"
   },
   "dependencies": {
-    "@neuralbertatech/ui": "^0.1.3",
+    "@neuralbertatech/ui": "^0.1.4",
     "react": "^18.2.0"
   },
   "devDependencies": {

@@ -41,10 +41,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@neuralbertatech/ui@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@neuralbertatech/ui/-/ui-0.1.3.tgz#65539d3fa9ad4c97ae4c97ecaa08637b9fdd72d6"
-  integrity sha512-yGcLzODTyUEL9Twq6xbe87V+JptoZyf81CswWe2EuFIc9frioijX4B2+OSAMsIuUr+b+gJ/axQjLdciUjDJ0xA==
+"@neuralbertatech/ui@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@neuralbertatech/ui/-/ui-0.1.4.tgz#08aba2da3cf6e5045bd343734d91fb5b0be03a3b"
+  integrity sha512-OZrmNT9ZDNWL+qnaHv4XiwaB2+fX+Xv5P1sRBTnNjsaRu7JVb++7TxU68qnEj7fsglqs5rsq5UuJd+ZxUE1Vhg==
   dependencies:
     bulma "^0.9.4"
     sass "^1.54.3"

@@ -5,7 +5,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "prefer-const": 1,
     "comma-style": ["error", "last"],
     "quotes": ["warn", "double"],
