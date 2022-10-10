@@ -26,7 +26,7 @@ const typeToClassname = (type: NotificationProps["type"]) => {
 const Notification: FunctionComponent<NotificationProps> = (props) => {
   return (
     <div className={`notification ${typeToClassname(props.type)} w-full`}>
-      {props.onDismiss !== undefined && <button className="delete" onClick={() => props.onDismiss()}></button>}
+      {props.onDismiss !== undefined && <button className="delete" onClick={props.onDismiss}></button>}
       <h3 className="title is-3">{props.title}</h3>
       <p>{props.description}</p>
     </div>
