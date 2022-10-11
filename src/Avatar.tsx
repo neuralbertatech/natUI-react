@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import BaseProps from "./baseProps";
 import * as RadixAvatar from "@radix-ui/react-avatar";
 
-export interface AvatarProps extends BaseProps {
+interface AvatarProps extends BaseProps {
   src: string;
   alt: string;
 }

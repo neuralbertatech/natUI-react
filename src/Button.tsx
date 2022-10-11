@@ -46,7 +46,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
     disabled: props.disabled,
   };
   const innerDOM = (<>
-    <span className="icon">{props.icon}</span>
+    {props.icon && <span className="icon">{props.icon}</span>}
     <span>{props.text}</span>
   </>);
   return (props.onClick) ?
