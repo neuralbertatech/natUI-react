@@ -1,16 +1,17 @@
 import { FunctionComponent, MutableRefObject, ReactElement, useState } from "react";
 import BaseProps from "./baseProps";
 
-interface InputTextProps extends BaseProps {
+interface InputNumberProps extends BaseProps {
   placeholder: string;
-  state: [InputTextState, React.Dispatch<React.SetStateAction<InputTextState>>];
+  state: [InputNumberState, React.Dispatch<React.SetStateAction<InputNumberState>>];
+  min?: number;
+  max?: number;
   icon?: ReactElement;
-  validation?: RegExp;
   disabled?: boolean;
 }
 
-interface InputTextState {
-  value: string;
+interface InputNumberState {
+  value: number;
   valid?: boolean;
 }
 
@@ -25,24 +26,28 @@ const stateClassName = (state: boolean | undefined) => {
   }
 };
 
-const InputText: FunctionComponent<InputTextProps> = (props) => {
+const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
   const [state, setState] = props.state;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === "") return;
+    const value = parseInt(event.target.value, 10);
     setState({
-      value: event.target.value,
-      valid: props.validation?.test(event.target.value)
+      value: value,
+      valid: (props.min === undefined || value >= props.min) && (props.max === undefined || value <= props.max)
     });
   };
 
   return (
     <div className={`control ${props.icon && "has-icons-left"}`}>
       <input
-        type="text"
+        type="number"
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}
-        onChange={onChange} />
+        onChange={onChange}
+        min={props.min}
+        max={props.max} />
       <span className="icon is-small is-left">
         {props.icon}
       </span>
@@ -50,4 +55,4 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
   );
 };
 
-export default InputText;
+export default InputNumber;

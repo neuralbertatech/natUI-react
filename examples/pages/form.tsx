@@ -1,12 +1,46 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import InputText from "@neuralbertatech/react/lib/InputText";
+// TODO: refactor InputText, InputEmail, InputNumber to reuse same logic (possible higher order component)
+// TODO: create InputPassword
+import InputText, { InputTextState } from "@neuralbertatech/react/lib/InputText";
+import InputEmail, { InputEmailState } from "@neuralbertatech/react/lib/InputEmail";
+import InputNumber, { InputNumberState } from "@neuralbertatech/react/lib/InputNumber";
 import Button from "@neuralbertatech/react/lib/Button";
+import { useEffect, useState } from "react";
+
+interface Form {
+  name: string;
+  email: string;
+  age: number;
+}
 
 const Home: NextPage = () => {
-  const form = {
-    name: ""
-  };
+  const [name, setName] = useState<InputTextState>({
+    value: "",
+  });
+  const [email, setEmail] = useState<InputEmailState>({
+    value: "",
+  });
+  const [age, setAge] = useState<InputNumberState>({
+    value: 0,
+  });
+  const [form, setForm] = useState<Form>({
+    name: "",
+    email: "",
+    age: 0,
+  });
+  const [disableButton, setDisableButton] = useState(true);
+
+  useEffect(() => {
+    setForm({
+      name: name,
+      email: email,
+      age: age,
+    });
+    setDisableButton(Object.values(form)
+      .some((value) => value.valid === false));
+  }, [name, email]);
+
   return (
     <div>
       <Head>
@@ -21,12 +55,13 @@ const Home: NextPage = () => {
       }}>
         <form>
           <label>Name</label>
-          <InputText placeholder="Name" validation={/\w+\s\w+/} id="name" listener={form} />
+          <InputText placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} />
           <label>Email</label>
-          {/* TODO: replace with email component that just calls inputtext but with email regex */}
-          <InputText placeholder="Email" validation={/[\w\d-_]+@[\w\d-_\.]+\.\w{2,3}/} id="email" listener={form} />
+          <InputEmail placeholder="example@neuralberta.tech" state={[email, setEmail]} />
+          <label>Age</label>
+          <InputNumber placeholder="Email" state={[age, setAge]} min={0} max={5} />
         </form>
-        <Button text="Log" onClick={() => console.table(form)} />
+        <Button text="Log" onClick={() => console.table(form)} disabled={disableButton} />
       </main>
     </div>
   );
