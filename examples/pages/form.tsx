@@ -1,11 +1,13 @@
-import type { NextPage } from "next";
+import { DEFAULT_INPUT_STATE_NUMBER, DEFAULT_INPUT_STATE_STRING, InputState } from "../../lib/utils/inputBase";
+import { useEffect, useState } from "react";
+
+import Button from "@neuralbertatech/react/lib/Button";
 import Head from "next/head";
-import InputText from "@neuralbertatech/react/lib/InputText";
 import InputEmail from "@neuralbertatech/react/lib/InputEmail";
 import InputNumber from "@neuralbertatech/react/lib/InputNumber";
-import { InputState } from "../../lib/utils/inputBase";
-import Button from "@neuralbertatech/react/lib/Button";
-import { useEffect, useState } from "react";
+import InputPassword from "@neuralbertatech/react/lib/InputPassword";
+import InputText from "@neuralbertatech/react/lib/InputText";
+import type { NextPage } from "next";
 
 interface Form {
   name: InputState<string>;
@@ -14,15 +16,10 @@ interface Form {
 }
 
 const Home: NextPage = () => {
-  const [name, setName] = useState<InputState<string>>({
-    value: "",
-  });
-  const [email, setEmail] = useState<InputState<string>>({
-    value: "",
-  });
-  const [age, setAge] = useState<InputState<number>>({
-    value: 0,
-  });
+  const [name, setName] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
+  const [email, setEmail] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
+  const [password, setPassword] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
+  const [age, setAge] = useState<InputState<number>>(DEFAULT_INPUT_STATE_NUMBER);
   const [form, setForm] = useState<Form>({
     name,
     email,
@@ -58,6 +55,8 @@ const Home: NextPage = () => {
           <InputText placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} />
           <label>Email</label>
           <InputEmail placeholder="example@neuralberta.tech" state={[email, setEmail]} />
+          <label>Password</label>
+          <InputPassword placeholder="example@neuralberta.tech" state={[password, setPassword]} />
           <label>Age</label>
           <InputNumber placeholder="Email" state={[age, setAge]} min={0} max={5} />
         </form>

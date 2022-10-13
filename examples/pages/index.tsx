@@ -1,10 +1,11 @@
-import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect, useState } from "react";
+
+import Head from "next/head";
+import { LoremIpsum } from "lorem-ipsum";
+import type { NextPage } from "next";
 import NotificationList from "@neuralbertatech/react/lib/NotificationList";
 import { NotificationProps } from "@neuralbertatech/react/lib/Notification";
 import NotificationStore from "@neuralbertatech/react/lib/utils/notificationStore";
-import { LoremIpsum } from "lorem-ipsum";
 
 const lorem = new LoremIpsum();
 const text = lorem.generateParagraphs(1);

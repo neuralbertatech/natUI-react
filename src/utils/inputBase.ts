@@ -12,6 +12,14 @@ export interface InputState<T> {
   valid?: boolean;
 }
 
+export const DEFAULT_INPUT_STATE_STRING: InputState<string> = {
+  value: ""
+}
+
+export const DEFAULT_INPUT_STATE_NUMBER: InputState<number> = {
+  value: 0
+}
+
 export const stateClassName = (state: boolean | undefined) => {
   switch (state) {
     case true:

@@ -1,4 +1,5 @@
-import { ReactElement, FunctionComponent, CSSProperties } from "react";
+import { CSSProperties, FunctionComponent, ReactElement } from "react";
+
 import BaseProps from "./baseProps";
 
 interface ListProps extends BaseProps {

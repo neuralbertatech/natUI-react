@@ -1,5 +1,6 @@
-import { FunctionComponent } from "react";
 import { InputProps, stateClassName } from "./utils/inputBase";
+
+import { FunctionComponent } from "react";
 
 interface InputNumberProps extends InputProps<number> {
   min?: number;

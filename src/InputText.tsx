@@ -1,11 +1,13 @@
-import { FunctionComponent } from "react";
 import { InputProps, stateClassName } from "./utils/inputBase";
+
+import { FunctionComponent } from "react";
 
 export interface InputTextProps extends InputProps<string> {
   type?: "text" | "email" | "password";
   validation?: RegExp;
 }
 
+// TODO: add some hover tooltip to explain why input might be invalid (new prop field)
 const InputText: FunctionComponent<InputTextProps> = (props) => {
   const [state, setState] = props.state;
 
