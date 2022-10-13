@@ -1,29 +1,10 @@
-import { FunctionComponent, MutableRefObject, ReactElement, useState } from "react";
-import BaseProps from "./baseProps";
+import { FunctionComponent } from "react";
+import { InputProps, stateClassName } from "./utils/inputBase";
 
-interface InputTextProps extends BaseProps {
-  placeholder: string;
-  state: [InputTextState, React.Dispatch<React.SetStateAction<InputTextState>>];
-  icon?: ReactElement;
+export interface InputTextProps extends InputProps<string> {
+  type?: "text" | "email" | "password";
   validation?: RegExp;
-  disabled?: boolean;
 }
-
-interface InputTextState {
-  value: string;
-  valid?: boolean;
-}
-
-const stateClassName = (state: boolean | undefined) => {
-  switch (state) {
-    case true:
-      return "is-success";
-    case false:
-      return "is-danger";
-    default:
-      return "";
-  }
-};
 
 const InputText: FunctionComponent<InputTextProps> = (props) => {
   const [state, setState] = props.state;
@@ -38,7 +19,7 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
   return (
     <div className={`control ${props.icon && "has-icons-left"}`}>
       <input
-        type="text"
+        type={props.type}
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}
@@ -49,5 +30,7 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
     </div>
   );
 };
+
+InputText.defaultProps = { type: "text" };
 
 export default InputText;

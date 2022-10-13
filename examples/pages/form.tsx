@@ -1,45 +1,45 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-// TODO: refactor InputText, InputEmail, InputNumber to reuse same logic (possible higher order component)
-// TODO: create InputPassword
-import InputText, { InputTextState } from "@neuralbertatech/react/lib/InputText";
-import InputEmail, { InputEmailState } from "@neuralbertatech/react/lib/InputEmail";
-import InputNumber, { InputNumberState } from "@neuralbertatech/react/lib/InputNumber";
+import InputText from "@neuralbertatech/react/lib/InputText";
+import InputEmail from "@neuralbertatech/react/lib/InputEmail";
+import InputNumber from "@neuralbertatech/react/lib/InputNumber";
+import { InputState } from "../../lib/utils/inputBase";
 import Button from "@neuralbertatech/react/lib/Button";
 import { useEffect, useState } from "react";
 
 interface Form {
-  name: string;
-  email: string;
-  age: number;
+  name: InputState<string>;
+  email: InputState<string>;
+  age: InputState<number>;
 }
 
 const Home: NextPage = () => {
-  const [name, setName] = useState<InputTextState>({
+  const [name, setName] = useState<InputState<string>>({
     value: "",
   });
-  const [email, setEmail] = useState<InputEmailState>({
+  const [email, setEmail] = useState<InputState<string>>({
     value: "",
   });
-  const [age, setAge] = useState<InputNumberState>({
+  const [age, setAge] = useState<InputState<number>>({
     value: 0,
   });
   const [form, setForm] = useState<Form>({
-    name: "",
-    email: "",
-    age: 0,
+    name,
+    email,
+    age,
   });
   const [disableButton, setDisableButton] = useState(true);
 
   useEffect(() => {
-    setForm({
-      name: name,
-      email: email,
-      age: age,
-    });
-    setDisableButton(Object.values(form)
+    const tempForm = {
+      name,
+      email,
+      age,
+    };
+    setForm(tempForm);
+    setDisableButton(Object.values(tempForm)
       .some((value) => value.valid === false));
-  }, [name, email]);
+  }, [name, email, age]);
 
   return (
     <div>
