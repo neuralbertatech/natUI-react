@@ -5,7 +5,7 @@ import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import List from "./components/List";
 import NotificationList from "./components/notification/NotificationList";
-import NotificationStore from "./components/notification/notificationStore";
+import { NotificationStore } from "./utils";
 
 export {
   Avatar,
