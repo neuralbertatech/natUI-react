@@ -19,9 +19,11 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
   };
 
   return (
-    <InputWrapper>
+    <InputWrapper label={props.label}>
       <input
         type={props.type}
+        id={props.name}
+        name={props.name}
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}

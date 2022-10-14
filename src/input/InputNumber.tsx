@@ -20,9 +20,11 @@ const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
   };
 
   return (
-    <InputWrapper>
+    <InputWrapper label={props.label}>
       <input
         type="number"
+        id={props.name}
+        name={props.name}
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}

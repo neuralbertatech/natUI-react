@@ -1,6 +1,10 @@
 import { FunctionComponent, ReactElement, ReactNode } from "react";
 
+type primitive = string | number | boolean;
+
 export interface InputProps<T> {
+  name: string;
+  label: string;
   placeholder: string;
   state: [InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>];
   icon?: ReactElement;
@@ -8,8 +12,9 @@ export interface InputProps<T> {
 }
 
 interface InputWrapperProps {
+  label: string;
+  children: ReactElement<FunctionComponent<InputProps<primitive>>>;
   icon?: ReactElement;
-  children: ReactNode;
 }
 
 export interface InputState<T> {
@@ -37,12 +42,16 @@ export const stateClassName = (state: boolean | undefined) => {
 };
 
 export const InputWrapper: FunctionComponent<InputWrapperProps> = (props) => {
-    return (
-    <div className={`control ${props.icon && "has-icons-left"}`}>
-      {props.children}
-      <span className="icon is-small is-left">
-        {props.icon}
-      </span>
-    </div>
+  const { name } = props.children.props;
+  return (
+    <>
+      <label htmlFor={name}>{props.label}</label>
+      <div className={`control ${props.icon && "has-icons-left"}`}>
+        {props.children}
+        <span className="icon is-small is-left">
+          {props.icon}
+        </span>
+      </div>
+    </>
   );
 }
