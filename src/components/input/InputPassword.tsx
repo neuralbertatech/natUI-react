@@ -9,7 +9,7 @@ interface InputPasswordProps extends InputTextProps {
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 const InputPassword: FunctionComponent<InputPasswordProps> = (props) => {
-  return <InputText type="password" {...props} validation={passwordRegex} />
+  return <InputText type="password" {...props} validation={passwordRegex} />;
 };
 
 export default InputPassword;

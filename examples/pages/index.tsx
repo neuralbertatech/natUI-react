@@ -1,4 +1,4 @@
-import { NotificationList, NotificationProps, NotificationStore } from "@neuralbertatech/react"
+import { NotificationList, NotificationProps, NotificationStore } from "@neuralbertatech/react";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";

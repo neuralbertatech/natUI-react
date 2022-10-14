@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement, ReactNode } from "react";
+import { FunctionComponent, ReactElement } from "react";
 
 type primitive = string | number | boolean;
 
@@ -24,11 +24,11 @@ export interface InputState<T> {
 
 export const DEFAULT_INPUT_STATE_STRING: InputState<string> = {
   value: ""
-}
+};
 
 export const DEFAULT_INPUT_STATE_NUMBER: InputState<number> = {
   value: 0
-}
+};
 
 export const stateClassName = (state: boolean | undefined) => {
   switch (state) {
@@ -54,4 +54,4 @@ export const InputWrapper: FunctionComponent<InputWrapperProps> = (props) => {
       </div>
     </>
   );
-}
+};

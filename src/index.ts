@@ -1,4 +1,4 @@
-import { InputEmail, InputNumber, InputPassword, InputText } from "./components/input"
+import { InputEmail, InputNumber, InputPassword, InputText } from "./components/input";
 import Notification, { NotificationProps } from "./components/notification/Notification";
 
 import Avatar from "./components/Avatar";

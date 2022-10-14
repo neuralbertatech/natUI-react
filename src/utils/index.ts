@@ -1,5 +1,5 @@
-import NotificationStore from "./notificationStore"
+import NotificationStore from "./notificationStore";
 
 export {
-	NotificationStore
-}
+  NotificationStore
+};

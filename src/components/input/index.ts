@@ -4,8 +4,8 @@ import InputPassword from "./InputPassword";
 import InputText from "./InputText";
 
 export {
-	InputEmail,
-	InputNumber,
-	InputPassword,
-	InputText
-}
+  InputEmail,
+  InputNumber,
+  InputPassword,
+  InputText
+};

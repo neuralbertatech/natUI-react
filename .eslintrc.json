@@ -5,7 +5,7 @@
     "@typescript-eslint"
   ],
   "extends": [
-    "@typescript-eslint/no-unused-vars"
+    "plugin:@typescript-eslint/eslint-recommended"
   ],
   "rules": {
     "indent": ["error", 2, { "SwitchCase": 1 }],
@@ -14,7 +14,7 @@
     "quotes": ["warn", "double"],
     "jsx-quotes": ["warn", "prefer-double"],
     "no-unused-vars": 0,
-    "@typescript-eslint/no-unused-vars": ["errors"],
+    "@typescript-eslint/no-unused-vars": [2],
     "no-eval": 2,
     "no-else-return": 2,
     "no-empty": "error",
