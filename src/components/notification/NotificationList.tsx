@@ -1,6 +1,6 @@
 import Notification, { NotificationProps } from "./Notification";
 
-import BaseProps from "../utils/baseProps";
+import BaseProps from "../../types";
 import { FunctionComponent } from "react";
 import List from "../List";
 

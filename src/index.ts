@@ -1,11 +1,11 @@
-import { InputEmail, InputNumber, InputPassword, InputText } from "./input"
-import Notification, { NotificationProps } from "./notification/Notification";
+import { InputEmail, InputNumber, InputPassword, InputText } from "./components/input"
+import Notification, { NotificationProps } from "./components/notification/Notification";
 
-import Avatar from "./Avatar";
-import Button from "./Button";
-import List from "./List";
-import NotificationList from "./notification/NotificationList";
-import NotificationStore from "./notification/notificationStore";
+import Avatar from "./components/Avatar";
+import Button from "./components/Button";
+import List from "./components/List";
+import NotificationList from "./components/notification/NotificationList";
+import NotificationStore from "./components/notification/notificationStore";
 
 export {
   Avatar,

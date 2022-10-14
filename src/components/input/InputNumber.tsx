@@ -1,4 +1,4 @@
-import { InputProps, InputWrapper, stateClassName } from "./inputBase";
+import { InputProps, InputWrapper, stateClassName } from "./InputBase";
 
 import { FunctionComponent } from "react";
 
