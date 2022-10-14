@@ -1,8 +1,7 @@
+import { Button, InputEmail, InputNumber, InputPassword, InputText } from "@neuralbertatech/react";
 import { DEFAULT_INPUT_STATE_NUMBER, DEFAULT_INPUT_STATE_STRING, InputState } from "@neuralbertatech/react/lib/input/inputBase";
-import { InputEmail, InputNumber, InputPassword, InputText } from "@neuralbertatech/react/lib/input";
 import { useEffect, useState } from "react";
 
-import Button from "@neuralbertatech/react/lib/Button";
 import Head from "next/head";
 import type { NextPage } from "next";
 

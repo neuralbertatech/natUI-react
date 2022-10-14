@@ -1,10 +1,11 @@
-import {InputEmail, InputNumber, InputPassword, InputText} from "./input"
+import { InputEmail, InputNumber, InputPassword, InputText } from "./input"
+import Notification, { NotificationProps } from "./notification/Notification";
 
 import Avatar from "./Avatar";
 import Button from "./Button";
 import List from "./List";
-import Notification from "./notification/Notification";
 import NotificationList from "./notification/NotificationList";
+import NotificationStore from "./notification/notificationStore";
 
 export {
   Avatar,
@@ -15,7 +16,7 @@ export {
   InputText,
   List,
   Notification,
-  NotificationList
+  NotificationList,
+  NotificationStore,
+  NotificationProps
 };
-
-export default 0;
