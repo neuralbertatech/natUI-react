@@ -1,8 +1,8 @@
 import Notification, { NotificationProps } from "./Notification";
 
-import BaseProps from "./baseProps";
+import BaseProps from "../utils/baseProps";
 import { FunctionComponent } from "react";
-import List from "./List";
+import List from "../List";
 
 interface NotificationListProps extends BaseProps {
   notifications: NotificationProps[];

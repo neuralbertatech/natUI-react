@@ -1,6 +1,6 @@
 import { FunctionComponent, MouseEventHandler, ReactElement } from "react";
 
-import BaseProps from "./baseProps";
+import BaseProps from "./utils/baseProps";
 
 interface BaseButtonProps extends BaseProps {
   text: string;

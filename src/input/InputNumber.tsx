@@ -1,4 +1,4 @@
-import { InputProps, stateClassName } from "./utils/inputBase";
+import { InputProps, InputWrapper, stateClassName } from "./inputBase";
 
 import { FunctionComponent } from "react";
 
@@ -20,7 +20,7 @@ const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
   };
 
   return (
-    <div className={`control ${props.icon && "has-icons-left"}`}>
+    <InputWrapper>
       <input
         type="number"
         className={`input ${stateClassName(state.valid)}`}
@@ -29,10 +29,7 @@ const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
         onChange={onChange}
         min={props.min}
         max={props.max} />
-      <span className="icon is-small is-left">
-        {props.icon}
-      </span>
-    </div>
+    </InputWrapper>
   );
 };
 

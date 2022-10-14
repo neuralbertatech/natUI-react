@@ -1,6 +1,6 @@
 import { CSSProperties, FunctionComponent, ReactElement } from "react";
 
-import BaseProps from "./baseProps";
+import BaseProps from "./utils/baseProps";
 
 interface ListProps extends BaseProps {
   orientation?: "horizontal" | "vertical";

@@ -1,4 +1,4 @@
-import { NotificationProps } from "../Notification";
+import { NotificationProps } from "./Notification";
 
 export default class NotificationStore {
   private static notifications: NotificationProps[] = [];

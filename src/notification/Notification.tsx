@@ -1,4 +1,4 @@
-import BaseProps from "./baseProps";
+import BaseProps from "../utils/baseProps";
 import { FunctionComponent } from "react";
 
 export interface NotificationProps extends BaseProps {

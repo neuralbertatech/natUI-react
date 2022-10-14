@@ -14,6 +14,7 @@
     "url": "https://github.com/neuralbertatech/natUI-react/issues"
   },
   "license": "MIT",
+  "main": "lib",
   "files": [
     "lib/**/*",
     "LICENSE",

@@ -1,4 +1,4 @@
-import { InputProps, stateClassName } from "./utils/inputBase";
+import { InputProps, InputWrapper, stateClassName } from "./inputBase";
 
 import { FunctionComponent } from "react";
 
@@ -19,17 +19,14 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
   };
 
   return (
-    <div className={`control ${props.icon && "has-icons-left"}`}>
+    <InputWrapper>
       <input
         type={props.type}
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}
         onChange={onChange} />
-      <span className="icon is-small is-left">
-        {props.icon}
-      </span>
-    </div>
+    </InputWrapper>
   );
 };
 

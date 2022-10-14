@@ -1,10 +1,15 @@
-import { ReactElement } from "react";
+import { FunctionComponent, ReactElement, ReactNode } from "react";
 
 export interface InputProps<T> {
   placeholder: string;
   state: [InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>];
   icon?: ReactElement;
   disabled?: boolean;
+}
+
+interface InputWrapperProps {
+  icon?: ReactElement;
+  children: ReactNode;
 }
 
 export interface InputState<T> {
@@ -30,3 +35,14 @@ export const stateClassName = (state: boolean | undefined) => {
       return "";
   }
 };
+
+export const InputWrapper: FunctionComponent<InputWrapperProps> = (props) => {
+    return (
+    <div className={`control ${props.icon && "has-icons-left"}`}>
+      {props.children}
+      <span className="icon is-small is-left">
+        {props.icon}
+      </span>
+    </div>
+  );
+}
