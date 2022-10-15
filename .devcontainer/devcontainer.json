@@ -20,7 +20,8 @@
 			"extensions": [
 				"dbaeumer.vscode-eslint",
 				"amatiasq.sort-imports",
-				"SonarSource.sonarlint-vscode"
+				"SonarSource.sonarlint-vscode",
+				"ryanluker.vscode-coverage-gutters"
 			],
 			"settings": {
 				"terminal.integrated.profiles.linux": {
