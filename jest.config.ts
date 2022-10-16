@@ -15,6 +15,7 @@ const config: Config = {
     "node_modules",
     "<rootDir>"
   ],
+  coveragePathIgnorePatterns: ["index.ts"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "ts-jest"
   },
