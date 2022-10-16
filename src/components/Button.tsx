@@ -42,8 +42,8 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
   const commonProps = {
     className: `button
           ${typeToClassname(props.type)}
-          ${props.outlined && "is-outlined"}
-          ${props.loading && "is-loading"}`,
+          ${props.outlined ? "is-outlined" : ""}
+          ${props.loading ? "is-loading" : ""}`,
     disabled: props.disabled,
   };
   const innerDOM = (<>

@@ -2,7 +2,7 @@ import type { Config } from "jest";
 
 const config: Config = {
   preset: "ts-jest",
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-environment-jsdom",
   coverageThreshold: {
     global: {
       branches: 50,
@@ -11,8 +11,15 @@ const config: Config = {
       statements: 80
     }
   },
+  moduleDirectories: [
+    "node_modules",
+    "<rootDir>"
+  ],
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "ts-jest"
+  },
   collectCoverageFrom: ["src/**/*.{ts,tsx}"],
-  setupFilesAfterEnv: ["./jest-setup.ts"]
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"]
 };
 
 export default config;
