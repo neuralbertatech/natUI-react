@@ -58,7 +58,7 @@ const Home: NextPage = () => {
       <main style={{
         width: "100vw",
         height: "100vh"
-      }} onClick={() => setNotifications(NotificationStore.getNotifications())}>
+      } } onClick={ () => setNotifications(NotificationStore.getNotifications()) }>
         <NotificationList
           style={{
             position: "absolute",
