@@ -12,7 +12,7 @@ const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.valueAsNumber;
-    if (value === NaN) return;
+    if (Number.isNaN(value)) return;
     setState({
       value: event.target.valueAsNumber,
       valid: (props.min === undefined || value >= props.min) && (props.max === undefined || value <= props.max)
