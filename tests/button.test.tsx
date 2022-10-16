@@ -77,7 +77,7 @@ describe("Button CSS classes", () => {
     ["info", "is-info"],
     ["warning", "is-warning"],
     ["error", "is-danger"]
-  ])("colors", (type: string, cssClass: string) => {
+  ])("colors %s", (type: string, cssClass: string) => {
     type ButtonType = "success" | "info" | "warning" | "error";
     const rendered = render(
       <Button text="Button" type={type as ButtonType} onClick={() => { }} />

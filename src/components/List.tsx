@@ -1,6 +1,6 @@
-import { CSSProperties, FunctionComponent, ReactElement } from "react";
+import type { CSSProperties, FunctionComponent, ReactElement } from "react";
 
-import BaseProps from "../types";
+import type BaseProps from "../types";
 
 interface ListProps extends BaseProps {
   orientation?: "horizontal" | "vertical";
@@ -21,9 +21,14 @@ const List: FunctionComponent<ListProps> = (props) => {
     },
     ...props.style
   };
+  const items = props.items.map((item, i) => (
+    <li key={i}>
+      {item}
+    </li>
+  ));
   return (
-    <div style={combinedStyle}>
-      {props.items}
+    <div role="list" style={combinedStyle}>
+      {items}
     </div>
   );
 };

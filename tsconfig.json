@@ -14,7 +14,7 @@
     "jsx": "react-jsx",
     "declaration": true,
     "outDir": "./lib",
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": ".",
     "allowJs": false
   },
