@@ -2,16 +2,25 @@ import type { Config } from "jest";
 
 const config: Config = {
   preset: "ts-jest",
-  testEnvironment: "node",
+  testEnvironment: "jest-environment-jsdom",
   coverageThreshold: {
     global: {
       branches: 50,
       functions: 80,
-      lines: 80,
+      lines: 75,
       statements: 80
     }
   },
-  collectCoverageFrom: ["src/**/*.{ts,tsx}"]
+  moduleDirectories: [
+    "node_modules",
+    "<rootDir>"
+  ],
+  coveragePathIgnorePatterns: ["index.ts"],
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "ts-jest"
+  },
+  collectCoverageFrom: ["src/**/*.{ts,tsx}"],
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"]
 };
 
 export default config;

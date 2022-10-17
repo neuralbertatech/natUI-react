@@ -1,6 +1,7 @@
-import { InputProps, InputWrapper, stateClassName } from "./InputBase";
+import { InputWrapper, stateClassName } from "./InputBase";
 
 import { FunctionComponent } from "react";
+import type { InputProps } from "./InputBase";
 
 export interface InputTextProps extends InputProps<string> {
   type?: "text" | "email" | "password";
@@ -27,7 +28,9 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}
-        onChange={onChange} />
+        onChange={onChange}
+        aria-invalid={state.valid === false}
+      />
     </InputWrapper>
   );
 };

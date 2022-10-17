@@ -1,4 +1,4 @@
-import { NotificationProps } from "../components/notification/Notification";
+import type { NotificationProps } from "../components/notification/Notification";
 
 /**
  * Global store of notifications using the singleton pattern

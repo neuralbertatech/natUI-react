@@ -2,7 +2,8 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "jest-dom"
   ],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended"
@@ -19,6 +20,7 @@
     "no-else-return": 2,
     "no-empty": "error",
     "no-extra-semi": "error",
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "jest-dom/prefer-in-document": "error"
   }
 }
