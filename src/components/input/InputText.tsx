@@ -27,7 +27,9 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
         className={`input ${stateClassName(state.valid)}`}
         placeholder={props.placeholder}
         value={state.value}
-        onChange={onChange} />
+        onChange={onChange}
+        aria-invalid={state.valid === false}
+      />
     </InputWrapper>
   );
 };
