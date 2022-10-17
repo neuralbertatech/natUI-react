@@ -1,6 +1,6 @@
-import InputText, { InputTextProps } from "./InputText";
-
 import { FunctionComponent } from "react";
+import InputText from "./InputText";
+import type { InputTextProps } from "./InputText";
 
 interface InputEmailProps extends InputTextProps {
   validation?: never;

@@ -1,8 +1,9 @@
 import { InputEmail, InputNumber, InputPassword, InputText } from "../src";
-import { InputState, stateClassName } from "../src/components/input/InputBase";
 
+import type { InputState } from "../src/components/input/InputBase";
 import { RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
+import { stateClassName } from "../src/components/input/InputBase";
 import { useState as useStateMock } from "react";
 
 jest.mock("react", () => ({

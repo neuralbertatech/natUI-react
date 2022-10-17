@@ -1,6 +1,7 @@
-import { InputProps, InputWrapper, stateClassName } from "./InputBase";
+import { InputWrapper, stateClassName } from "./InputBase";
 
 import { FunctionComponent } from "react";
+import type { InputProps } from "./InputBase";
 
 export interface InputTextProps extends InputProps<string> {
   type?: "text" | "email" | "password";
