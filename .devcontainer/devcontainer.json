@@ -21,7 +21,9 @@
 				"dbaeumer.vscode-eslint",
 				"amatiasq.sort-imports",
 				"SonarSource.sonarlint-vscode",
-				"ryanluker.vscode-coverage-gutters"
+				"ryanluker.vscode-coverage-gutters",
+				"redhat.vscode-yaml",
+				"cschleiden.vscode-github-actions"
 			],
 			"settings": {
 				"terminal.integrated.profiles.linux": {
