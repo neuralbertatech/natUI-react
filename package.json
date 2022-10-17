@@ -25,7 +25,8 @@
     "dev": "tsc -w",
     "build": "tsc",
     "lint": "eslint src --fix",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --ci --coverage"
   },
   "precommit": "lint",
   "dependencies": {
