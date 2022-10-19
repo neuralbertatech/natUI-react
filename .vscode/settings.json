@@ -5,7 +5,7 @@
 	"emeraldwalk.runonsave": {
 		"commands": [
 			{
-				"match": "src/",
+				"match": "(src|better-docs)/",
 				"isAsync": true,
 				"cmd": "yarn docs"
 			}
