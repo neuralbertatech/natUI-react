@@ -1,6 +1,3 @@
-/**
- * @module @neuralbertatech/ui-react
- */
 import BaseProps from "../../types";
 import { FunctionComponent } from "react";
 
@@ -24,7 +21,7 @@ export interface NotificationProps extends BaseProps {
 
 /**
  * Get the css class name for a given notification type.
- * @param type {"success" | "info" | "warning" | "error"} notification type
+ * @param type {"success" | "info" | "warning" | "error" | undefined} notification type
  * @returns {"is-success" | "is-info" | "is-warning" | "is-danger" | "is-primary"} type of string
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
