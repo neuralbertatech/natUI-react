@@ -23,8 +23,8 @@ type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
  * List Component
  * @component
  * @param items {ReactElement[]} The items to put in the list.
- * @param [orientation] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
- * @param [reversed] {boolean} If the input to the list should be reversed.
+ * @param [orientation="vertical"] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
+ * @param [reversed=false] {boolean} If the input to the list should be reversed.
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const List: FunctionComponent<ListProps> = (props) => {
