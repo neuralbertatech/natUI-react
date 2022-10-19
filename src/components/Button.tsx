@@ -55,7 +55,7 @@ export type ButtonProps = ButtonFunctionProps | ButtonLinkProps;
 
 /**
  * @hide
- * Get the css class name for a given notification type.
+ * Get the css class name for a given button style type.
  * @param type {"success" | "info" | "warning" | "error" | undefined} notification type
  * @returns {"is-success" | "is-info" | "is-warning" | "is-danger" | "is-primary"} type of string
  *
@@ -77,6 +77,7 @@ const typeToClassName = (type: ButtonProps["type"]) => {
 };
 
 /**
+ * Button Component
  * @component
  * @param text {string} The text to display on the button.
  * @param onClick {MouseEventHandler<HTMLButtonElement>} The handler function gets called when the user clicks on the button. Cannot be used if href is defined.
