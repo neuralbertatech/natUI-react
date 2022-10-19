@@ -7,6 +7,8 @@ import type { NotificationProps } from "../components/notification/Notification"
  * Global store of notifications using the singleton pattern
  * @class NotificationStore
  * @hideconstructor
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 export default class NotificationStore {
   private static notifications: NotificationProps[] = [];
@@ -17,6 +19,7 @@ export default class NotificationStore {
   /**
    * Add a notification to the store
    * @param notification {NotificationProps}
+   *
    * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
    */
   public static addNotification(notification: NotificationProps) {
@@ -27,6 +30,7 @@ export default class NotificationStore {
    * Remove a notification given its index
    * @param index {number} notification index
    * @returns {NotificationProps} the notificaion that was removed from the store
+   *
    * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
    */
   public static removeNotification(index: number) {
@@ -39,6 +43,7 @@ export default class NotificationStore {
   /**
    * Get all notifications.
    * @returns {NotificationProps[]} array of notifications
+   *
    * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
    */
   public static getNotifications() {

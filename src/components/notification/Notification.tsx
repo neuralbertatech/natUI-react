@@ -12,6 +12,8 @@ import { FunctionComponent } from "react";
  * @property description {string} The description for the notification
  * @property [type] {"success" | "info" | "warning" | "error"} The type of notification. Can be omitted for primary notification type.
  * @property [onDismiss] {Notification~onDismiss} Callback function to run when the user dismisses the notification.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 export interface NotificationProps extends BaseProps {
   title: string;
@@ -24,6 +26,8 @@ export interface NotificationProps extends BaseProps {
  * Get the css class name for a given notification type.
  * @param type {"success" | "info" | "warning" | "error"} notification type
  * @returns {"is-success" | "is-info" | "is-warning" | "is-danger" | "is-primary"} type of string
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const typeToClassName = (type: NotificationProps["type"]) => {
   switch (type) {
@@ -47,6 +51,8 @@ const typeToClassName = (type: NotificationProps["type"]) => {
  * @property description {string} The description for the notification
  * @property [type] {"success" | "info" | "warning" | "error"} The type of notification. Can be omitted for primary notification type.
  * @property [onDismiss] {Notification~onDismiss} Callback function to run when the user dismisses the notification.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const Notification: FunctionComponent<NotificationProps> = (props) => {
   return (
@@ -63,4 +69,6 @@ export default Notification;
  * Callback for onDismiss event
  * @callback onDissmiss
  * @return {void}
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */

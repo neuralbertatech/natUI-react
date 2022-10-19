@@ -13,6 +13,8 @@ import type { NotificationProps } from "./Notification";
  * @property notifications {NotificationProps[]} The notifications to display.
  * @property [maxNotifications=5] {numbe} Maximum amount of notification to display at once. Will display the first n notifications.
  * @property [maxTime=5000] {number} The maximum amount of time a notification should be on screen for.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface NotificationListProps extends BaseProps {
   notifications: NotificationProps[];
@@ -26,6 +28,8 @@ interface NotificationListProps extends BaseProps {
  * @param notifications {NotificationProps[]} The notifications to display.
  * @param [maxNotifications=5] {numbe} Maximum amount of notification to display at once. Will display the first n notifications.
  * @param [maxTime=5000] {number} The maximum amount of time a notification should be on screen for.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const NotificationList: FunctionComponent<NotificationListProps> = (props) => {
   const items = props.notifications

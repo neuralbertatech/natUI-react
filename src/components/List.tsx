@@ -10,6 +10,8 @@ import type BaseProps from "../types";
  * @property items {ReactElement[]} The items to put in the list.
  * @property [orientation] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
  * @property [reversed] {boolean} If the input to the list should be reversed.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface ListProps extends BaseProps {
   items: ReactElement[];
@@ -25,6 +27,7 @@ type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
  * @param items {ReactElement[]} The items to put in the list.
  * @param [orientation="vertical"] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
  * @param [reversed=false] {boolean} If the input to the list should be reversed.
+ *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const List: FunctionComponent<ListProps> = (props) => {

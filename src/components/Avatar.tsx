@@ -10,6 +10,8 @@ import { FunctionComponent } from "react";
  * @interface
  * @property src {string} The image source url.
  * @property alt {string} The alternative attribute if the image cannot be displayed.
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface AvatarProps extends BaseProps {
   src: string;
@@ -21,6 +23,7 @@ interface AvatarProps extends BaseProps {
  * @component
  * @param src {string} The image source url.
  * @param alt {string} The alternative attribute if the image cannot be displayed.
+ *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const Avatar: FunctionComponent<AvatarProps> = (props) => {

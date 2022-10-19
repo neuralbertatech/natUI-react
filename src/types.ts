@@ -5,6 +5,8 @@ import { CSSProperties } from "react";
  * @interface
  * @property [style] {CSSProperties} Override CSS properties
  * @see https://github.com/frenic/csstype 
+ *
+ * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface BaseProps {
 	style?: CSSProperties;
