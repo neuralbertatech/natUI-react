@@ -1,3 +1,6 @@
+/**
+ * @module @neuralbertatech/ui-react
+ */
 import { FunctionComponent, MouseEventHandler, ReactElement } from "react";
 
 import BaseProps from "../types";
