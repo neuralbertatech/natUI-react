@@ -8,7 +8,7 @@ type primitive = string | number | boolean;
  * @property name {string} The html name attribute for the input tag.
  * @property label {string} The text for the html label tag.
  * @property placeholder {string} The input placeholder.
- * @property state {[InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>]} The state for the input. Can be created with useState<InputState<?>>().
+ * @property state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @property [icon] {ReactElement} The icon to display inside the input field.
  * @property [disabled] {disabled} Whether the input tag is disabled or not.
  *
@@ -90,7 +90,7 @@ export const stateClassName = (state: boolean | undefined) => {
  * @param name {string} The html name attribute for the input tag.
  * @param label {string} The text for the html label tag.
  * @param placeholder {string} The input placeholder.
- * @param state {[InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>]} The state for the input. Can be created with useState<InputState<?>>().
+ * @param state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @param [icon] {ReactElement} The icon to display inside the input field.
  * @param [disabled] {disabled} Whether the input tag is disabled or not.
  *
