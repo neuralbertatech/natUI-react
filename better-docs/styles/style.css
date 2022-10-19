@@ -8,3 +8,7 @@
 .tag-source span a {
   color: inherit;
 }
+
+#main>.core {
+  overflow: initial;
+}
