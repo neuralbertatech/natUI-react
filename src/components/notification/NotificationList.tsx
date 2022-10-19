@@ -1,6 +1,3 @@
-/**
- * @module @neuralbertatech/ui-react
- */
 import BaseProps from "../../types";
 import { FunctionComponent } from "react";
 import List from "../List";

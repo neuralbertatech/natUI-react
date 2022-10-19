@@ -1,6 +1,3 @@
-/**
- * @module @neuralbertatech/ui-react
- */
 import type { NotificationProps } from "../components/notification/Notification";
 
 /**

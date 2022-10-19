@@ -1,6 +1,3 @@
-/**
- * @module @neuralbertatech/ui-react
- */
 import * as RadixAvatar from "@radix-ui/react-avatar";
 
 import BaseProps from "../types";

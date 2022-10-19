@@ -1,6 +1,3 @@
-/**
- * @module @neuralbertatech/ui-react
- */
 import type { CSSProperties, FunctionComponent, ReactElement } from "react";
 
 import type BaseProps from "../types";
