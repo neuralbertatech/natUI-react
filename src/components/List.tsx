@@ -39,7 +39,7 @@ const List: FunctionComponent<ListProps> = (props) => {
     ...props.style
   };
   const items = props.items.map((item, i) => (
-    <li key={i}>
+    <li key={i} style={{ listStyle: "none" }}>
       {item}
     </li>
   ));
