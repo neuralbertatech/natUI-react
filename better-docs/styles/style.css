@@ -1,0 +1,14 @@
+.inner,
+.inner .logo,
+.inner .logo .image,
+.inner .logo .image img {
+  height: 100%;
+}
+
+.tag-source span a {
+  color: inherit;
+}
+
+#main>.core {
+  overflow: initial;
+}
