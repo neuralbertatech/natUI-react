@@ -1,6 +1,7 @@
 import { InputEmail, InputNumber, InputPassword, InputText } from "./components/input";
 
 import Avatar from "./components/Avatar";
+import Box from "./components/Box";
 import Button from "./components/Button";
 import List from "./components/List";
 import Notification from "./components/notification/Notification";
@@ -10,6 +11,7 @@ import { NotificationStore } from "./utils";
 
 export {
   Avatar,
+  Box,
   Button,
   InputEmail,
   InputNumber,

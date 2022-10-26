@@ -1,4 +1,4 @@
-import { NotificationList, NotificationProps, NotificationStore } from "@neuralbertatech/react";
+import { Box, NotificationList, NotificationProps, NotificationStore } from "@neuralbertatech/react";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -58,7 +58,10 @@ const Home: NextPage = () => {
       <main style={{
         width: "100vw",
         height: "100vh"
-      } } onClick={ () => setNotifications(NotificationStore.getNotifications()) }>
+      }} onClick={() => setNotifications(NotificationStore.getNotifications())}>
+        <Box glass style={{ width: "50%" }}>Box 1</Box>
+        <Box glass style={{ width: "50%" }}>Box 2</Box>
+        <Box glass style={{ width: "50%" }}>Box 3</Box>
         <NotificationList
           style={{
             position: "absolute",
