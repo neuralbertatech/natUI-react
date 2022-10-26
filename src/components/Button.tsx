@@ -1,4 +1,4 @@
-import { FunctionComponent, MouseEventHandler, ReactElement } from "react";
+import type { FunctionComponent, MouseEventHandler, ReactElement } from "react";
 
 import BaseProps from "../types";
 

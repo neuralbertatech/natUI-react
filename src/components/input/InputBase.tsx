@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from "react";
+import type { FunctionComponent, ReactElement } from "react";
 
 type primitive = string | number | boolean;
 

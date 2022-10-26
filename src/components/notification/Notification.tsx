@@ -1,5 +1,5 @@
 import BaseProps from "../../types";
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 
 /**
  * NotificationProps
