@@ -10,8 +10,6 @@ describe("Box Component", () => {
     expect(rendered.getByText(/box/i)).toHaveClass("box");
   });
 
-
-
   test("no glass effect", () => {
     const rendered = render(
       <Box>Box 2</Box>

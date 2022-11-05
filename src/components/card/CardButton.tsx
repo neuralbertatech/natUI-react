@@ -7,12 +7,12 @@ import List from "../List";
 /**
  * @interface
  * @implements CardButtonProps
- * @property orientation {"horizontal" | "vertical"} The orientation for the buttons.
+ * @property [orientation="horizontal"] {"horizontal" | "vertical"} The orientation for the buttons.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface CardButtonsProps extends BaseProps {
-  orientation: "horizontal" | "vertical";
+  orientation?: "horizontal" | "vertical";
   children: ReactElement<ButtonComponent>[];
 }
 
@@ -21,7 +21,7 @@ export type CardButtonGroupComponent = FunctionComponent<CardButtonsProps>
 /**
  * CardButtons Component
  * @component
- * @param orientation {"horizontal" | "vertical"} The orientation for the buttons.
+ * @param [orientation="horizontal"] {"horizontal" | "vertical"} The orientation for the buttons.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */

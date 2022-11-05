@@ -1,13 +1,10 @@
 import { Button, List } from "../src";
-import { render, screen } from "@testing-library/react";
+
+import { render } from "@testing-library/react";
 
 describe("List Component", () => {
-  const items = [
-    <Button text="Button 1" href="/link1" />,
-    <Button text="Button 2" href="/link2" />,
-    <Button text="Button 3" href="/link3" />,
-    <Button text="Button 4" href="/link4" />
-  ];
+  const items = [1, 2, 3, 4].map(i =>
+    <Button text={`Button ${i}`} href={`/link${i}`} key={i} />);
 
   type FlexDirectionTestCase = [["horizontal" | "vertical", boolean], string];
   const flexDirectionTestCases: FlexDirectionTestCase[] = [
@@ -19,7 +16,9 @@ describe("List Component", () => {
 
   test.each(flexDirectionTestCases)("flex direction [%s, %s]", ([orientation, reversed], flexDirection) => {
     const rendered = render(
-      <List items={items} orientation={orientation} reversed={reversed} />
+      <List orientation={orientation} reversed={reversed}>
+        {items}
+      </List>
     );
 
     expect(rendered.getByRole("list")).toBeInTheDocument();
