@@ -4,14 +4,14 @@ import type BaseProps from "../types";
 
 /**
  * @interface
- * @property items {ReactElement[]} The items to put in the list.
+ * @property children {ReactElement[]} The children to put in the list.
  * @property [orientation] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
  * @property [reversed] {boolean} If the input to the list should be reversed.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface ListProps extends BaseProps {
-  items: ReactElement[];
+  children: ReactElement[];
   orientation?: "horizontal" | "vertical";
   reversed?: boolean;
 }
@@ -21,7 +21,7 @@ type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
 /**
  * List Component
  * @component
- * @param items {ReactElement[]} The items to put in the list.
+ * @param children {ReactElement[]} The children to put in the list.
  * @param [orientation="vertical"] {"horizontal" | "vertical"} Whether to have a horizontal or vertical list.
  * @param [reversed=false] {boolean} If the input to the list should be reversed.
  *
@@ -34,12 +34,13 @@ const List: FunctionComponent<ListProps> = (props) => {
     ...{
       display: "flex",
       flexDirection: direction,
-      alignItems: "center"
+      alignItems: "center",
+      gap: 16
     },
     ...props.style
   };
-  const items = props.items.map((item, i) => (
-    <li key={i} style={{ listStyle: "none" }}>
+  const items = props.children.map((item, i) => (
+    <li key={i} style={{ listStyle: "none", width: "100%" }}>
       {item}
     </li>
   ));
