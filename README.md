@@ -5,4 +5,4 @@
 
 NeurAlbertaTech's react components using [natUI](https://github.com/neuralbertatech/natUI).
 
-Checkout our ![docs](https://ui.react.neuralberta.tech/).
+Checkout our [docs](https://ui.react.neuralberta.tech/).
