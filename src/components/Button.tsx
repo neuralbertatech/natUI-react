@@ -76,6 +76,8 @@ const typeToClassName = (type: ButtonProps["type"]) => {
   }
 };
 
+export type ButtonComponent = FunctionComponent<ButtonProps>
+
 /**
  * Button Component
  * @component
@@ -90,8 +92,9 @@ const typeToClassName = (type: ButtonProps["type"]) => {
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Button: FunctionComponent<ButtonProps> = (props) => {
+const Button: ButtonComponent = (props) => {
   const commonProps = {
+    style: props.style,
     className: `button
           ${typeToClassName(props.type)}
           ${props.outlined ? "is-outlined" : ""}

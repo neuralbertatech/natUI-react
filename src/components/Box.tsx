@@ -4,7 +4,7 @@ import BaseProps from "../types";
 
 /**
  * @interface
- * @property bg {string} The background colour for the box.
+ * @property [glass=false] {boolean} The background colour for the box.
  * @property children {ReactNode} Prop children.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
@@ -17,7 +17,7 @@ interface BoxProps extends BaseProps {
 /**
  * Box Component
  * @component
- * @param bg {string} The background colour for the box.
+ * @param [glass=false] {boolean} The background colour for the box.
  * @param children {ReactNode} Prop children.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>

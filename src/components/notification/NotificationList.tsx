@@ -35,7 +35,9 @@ const NotificationList: FunctionComponent<NotificationListProps> = (props) => {
       return <Notification {...notificationProp} key={i} />;
     });
   return (
-    <List style={{ ...props.style, gap: 16 }} items={items} reversed={props.reversed} />
+    <List style={{ ...props.style, gap: 16 }} reversed={props.reversed}>
+      {items}
+    </List>
   );
 };
 
