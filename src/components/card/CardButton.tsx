@@ -1,8 +1,9 @@
 import type { FunctionComponent, ReactElement } from "react";
 
 import BaseProps from "../../types";
-import type { ButtonComponent } from "../Button";
 import List from "../List";
+
+type ButtonComponent = ReactElement<ButtonComponent>;
 
 /**
  * @interface
@@ -13,7 +14,7 @@ import List from "../List";
  */
 interface CardButtonsProps extends BaseProps {
   orientation?: "horizontal" | "vertical";
-  children: ReactElement<ButtonComponent>[];
+  children: ButtonComponent | ButtonComponent[];
 }
 
 export type CardButtonGroupComponent = FunctionComponent<CardButtonsProps>
@@ -26,9 +27,11 @@ export type CardButtonGroupComponent = FunctionComponent<CardButtonsProps>
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const CardButtons: CardButtonGroupComponent = (props) => {
-  return <List orientation={props.orientation}>
-    {props.children}
-  </List>;
+  return Array.isArray(props.children)
+    ? <List orientation={props.orientation}>
+      {props.children}
+    </List>
+    : <>{props.children}</>;
 };
 
 CardButtons.defaultProps = {

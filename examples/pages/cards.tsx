@@ -38,6 +38,19 @@ const Home: NextPage = () => {
             <Button text="Button 3" href="/cards" style={{width: "100%"}}></Button>
           </CardButtons>
         </Card>)}
+        <Card
+          glass
+          title="Title"
+          subtitle="Subtitle"
+          date={date}
+        >
+          <CardBody>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa eveniet id laboriosam dolorum aliquam dignissimos officia enim est repudiandae. Excepturi ducimus qui at eum rem, a fugiat vitae voluptates aut?
+          </CardBody>
+          <CardButtons orientation="horizontal">
+            <Button text="Button" href="/cards" style={{ width: "100%" }}></Button>
+          </CardButtons>
+        </Card>
       </main>
     </>
   );
