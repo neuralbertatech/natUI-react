@@ -85,6 +85,9 @@ export const stateClassName = (state: boolean | undefined) => {
   }
 };
 
+const hasIconLeft = (icon: InputWrapperProps["icon"]) =>
+  icon === undefined ? "" : "has-icons-left";
+
 /**
  * Input Wrapper Component
  * @param name {string} The html name attribute for the input tag.
@@ -101,12 +104,12 @@ export const InputWrapper: FunctionComponent<InputWrapperProps> = (props) => {
   return (
     <>
       <label htmlFor={name}>{props.label}</label>
-      <div className={`control ${props.icon && "has-icons-left"}`}>
+      <p className={`control ${hasIconLeft(props.icon)}`}>
         {props.children}
-        <span className="icon is-small is-left">
+        {props.icon && <span className="icon is-left">
           {props.icon}
-        </span>
-      </div>
+        </span>}
+      </p>
     </>
   );
 };

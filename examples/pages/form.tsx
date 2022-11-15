@@ -1,8 +1,9 @@
 import { Button, InputEmail, InputNumber, InputPassword, InputText } from "@neuralbertatech/react";
-import { DEFAULT_INPUT_STATE_NUMBER, DEFAULT_INPUT_STATE_STRING, InputState } from "@neuralbertatech/react/lib/input/inputBase";
+import { DEFAULT_INPUT_STATE_NUMBER, DEFAULT_INPUT_STATE_STRING } from "@neuralbertatech/react/lib/components/input/InputBase";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
+import type { InputState } from "@neuralbertatech/react/lib/components/input/InputBase";
 import type { NextPage } from "next";
 
 interface Form {
@@ -47,7 +48,7 @@ const Home: NextPage = () => {
         height: "100vh"
       }}>
         <form>
-          <InputText label="Name" name="name" placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} />
+          <InputText label="Name" name="name" placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} icon={<span>🔍</span>} />
           <InputEmail label="Email" name="email" placeholder="example@neuralberta.tech" state={[email, setEmail]} />
           <InputPassword label="Password" name="password" placeholder="example@neuralberta.tech" state={[password, setPassword]} />
           <InputNumber label="Age" name="age" placeholder="Email" state={[age, setAge]} min={0} max={5} />

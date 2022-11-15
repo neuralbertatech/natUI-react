@@ -44,7 +44,7 @@ const InputText: FunctionComponent<InputTextProps> = (props) => {
   };
 
   return (
-    <InputWrapper label={props.label}>
+    <InputWrapper label={props.label} icon={props.icon}>
       <input
         type={props.type}
         id={props.name}

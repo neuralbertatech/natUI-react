@@ -42,7 +42,7 @@ const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
   };
 
   return (
-    <InputWrapper label={props.label}>
+    <InputWrapper label={props.label} icon={props.icon}>
       <input
         type="number"
         id={props.name}
