@@ -1,6 +1,6 @@
 {
   "name": "@neuralbertatech/react",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "UI react framework built on top of natUI.",
   "keywords": [
