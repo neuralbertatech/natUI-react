@@ -18,7 +18,7 @@ export interface InputProps<T> {
   name: string;
   label: string;
   placeholder: string;
-  state: [InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>];
+  state: [InputState<T>, (value: InputState<T>) => any];
   icon?: ReactElement;
   disabled?: boolean;
 }
