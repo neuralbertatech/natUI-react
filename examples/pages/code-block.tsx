@@ -1,7 +1,7 @@
 import CodeBox from "./codebox";
 
 const MyApp = () => {
-  const code = `code to be entered
+  const code = `This is the code that will be copied.
 `;
 
   return (

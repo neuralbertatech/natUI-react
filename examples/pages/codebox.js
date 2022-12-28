@@ -23,4 +23,3 @@ const CodeBox = ({ code, language }) => {
 }
 
 export default CodeBox;
-
