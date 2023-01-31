@@ -23,14 +23,14 @@ type Language =
 
 /**
  * @interface
- * @property [code] {String} Text of code to display.
+ * @property [code] {string} Text of code to display.
  * @property [language] {Language} The language to use for highlighting.
  * @property [icon] {ReactElement} The element to use for the copy button.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 interface CodeBoxProps extends BaseProps {
-  code: String,
+  code: string,
   language: Language,
   icon: ReactElement,
 }
@@ -38,7 +38,7 @@ interface CodeBoxProps extends BaseProps {
 /**
  * CodeBox Component
  * @component
- * @param [code] {String} Text of code to display.
+ * @param [code] {string} Text of code to display.
  * @param [language] {Language} The language to use for highlighting.
  * @param [icon] {ReactElement} The element to use for the copy button.
  *
