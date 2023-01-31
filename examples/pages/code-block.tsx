@@ -5,7 +5,7 @@ const MyApp = () => {
 `;
 
   return (
-    <CodeBox code={code} language="python" />
+    <CodeBox code={code} language="python" icon={<span>[c]</span>} />
   );
 };
 
