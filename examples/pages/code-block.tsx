@@ -1,4 +1,4 @@
-import CodeBox from "./codebox";
+import { CodeBox } from "@neuralbertatech/react";
 
 const MyApp = () => {
   const code = `This is the code that will be copied.
@@ -7,6 +7,6 @@ const MyApp = () => {
   return (
     <CodeBox code={code} language="python" />
   );
-}
+};
 
 export default MyApp;
