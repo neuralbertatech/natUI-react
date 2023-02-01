@@ -13,6 +13,7 @@ export type RadioComponent = FunctionComponent<BaseRadioProps>
  * Radio Button Component
  * @component
  * @param text {string} The text to display beside the button
+ * @param name {string} To Link Multiple Radio Buttons to the same ID 
  * 
  * @author Yash Sunil Mouje <yash_mouje@hotmail.com>
  */
@@ -21,6 +22,7 @@ const Radio: RadioComponent = (props) => {
     text: props.text,
     name: props.name,
     disabled: props.disabled,
+    style: props.style,
   };
 
   const innerDOM = (<>
