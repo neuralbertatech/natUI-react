@@ -11,6 +11,7 @@ import Notification from "./components/notification/Notification";
 import NotificationList from "./components/notification/NotificationList";
 import type { NotificationProps } from "./components/notification/Notification";
 import { NotificationStore } from "./utils";
+import Video from "./components/Video";
 
 export {
   Box,
@@ -27,5 +28,6 @@ export {
   Card,
   CardBody,
   CardButtons,
+  Video,
   CodeBox,
 };
