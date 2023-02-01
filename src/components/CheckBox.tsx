@@ -8,7 +8,7 @@ interface CheckBoxProps extends BaseProps{
 
 const CheckBox: FunctionComponent<CheckBoxProps> = (props) => {
   return (
-    <label className={`checkbox`} style={props.style}>
+    <label className={"checkbox"} style={props.style}>
       <input type="checkbox" />
       Remember me
     </label>
