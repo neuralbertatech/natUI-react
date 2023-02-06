@@ -1,18 +1,31 @@
-import type { FunctionComponent, ReactNode } from "react";
+import type { ChangeEvent, FunctionComponent } from "react";
 
 import BaseProps from "../types";
 
-interface CheckBoxProps extends BaseProps{
-  children: ReactNode;
+interface CheckboxProps extends BaseProps{
+  isChecked: boolean;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  lable: string;
 }
 
-const CheckBox: FunctionComponent<CheckBoxProps> = (props) => {
+const Checkbox: FunctionComponent<CheckboxProps> = (props: CheckboxProps) => {
+
+
   return (
-    <label className={"checkbox"} style={props.style}>
-      <input type="checkbox" />
-      Remember me
-    </label>
+    <div style={{margin:"5px"}}>
+      <label >
+        {props.lable}
+        <input type="checkbox"  id={props.lable} checked={props.isChecked} onChange={props.handleChange} style={{marginLeft:"2px"}} />
+      </label>
+    </div> 
+
   );
 };
 
-export default CheckBox;
+Checkbox.defaultProps = {
+  isChecked: false,
+};
+
+export default Checkbox;
+
+
