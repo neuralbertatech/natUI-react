@@ -10,7 +10,7 @@ import Notification from "./components/notification/Notification";
 import NotificationList from "./components/notification/NotificationList";
 import type { NotificationProps } from "./components/notification/Notification";
 import { NotificationStore } from "./utils";
-import Radio from "./components/RadioButton";
+import Radio from "./components/input/Radio";
 
 export {
   Box,
