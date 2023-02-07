@@ -17,10 +17,9 @@ const Home: NextPage = () => {
       <main style={{
         padding: "32px"
       }}>
-        
-        <Radio text="Option 1" name="radio-test" style={{padding: "10px"}}></Radio>
-        <Radio text="Option 2" name="radio-test" style={{padding: "10px"}}></Radio>
-        <Radio text="Disabled Option" name="radio-test" disabled style={{padding: "10px"}}></Radio>
+        <Radio name="radio-test">Option 1</Radio>
+        <Radio name="radio-test">Option 2</Radio>
+        <Radio name="radio-test" disabled>Disabled Option</Radio>
       </main>
     </>
   );
