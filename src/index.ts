@@ -13,7 +13,6 @@ import { NotificationStore } from "./utils";
 
 export {
   Box,
-  Radio,
   Button,
   InputEmail,
   InputNumber,
@@ -26,5 +25,6 @@ export {
   NotificationProps,
   Card,
   CardBody,
-  CardButtons
+  CardButtons,
+  Radio
 };
