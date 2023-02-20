@@ -611,10 +611,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@neuralbertatech/ui@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.npmjs.org/@neuralbertatech/ui/-/ui-0.1.4.tgz"
-  integrity sha512-OZrmNT9ZDNWL+qnaHv4XiwaB2+fX+Xv5P1sRBTnNjsaRu7JVb++7TxU68qnEj7fsglqs5rsq5UuJd+ZxUE1Vhg==
+"@neuralbertatech/ui@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@neuralbertatech/ui/-/ui-0.1.5.tgz#8975685314d83be4651d36389aeab12860bb3514"
+  integrity sha512-mSlx82hWxjETa50wcEnvIebFD73AEX8rB9E9Oo5Q2LBiE2JKI3GVfCDFSGSN0WTRuYI24F4ITIV/75bz8L2nxA==
   dependencies:
     bulma "^0.9.4"
     sass "^1.54.3"
