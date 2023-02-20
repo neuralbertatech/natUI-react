@@ -1,4 +1,4 @@
-import { InputEmail, InputNumber, InputPassword, InputText } from "./components/input";
+import { InputEmail, InputNumber, InputPassword, InputText, Radio } from "./components/input";
 
 import Box from "./components/Box";
 import Button from "./components/Button";
@@ -28,6 +28,7 @@ export {
   Card,
   CardBody,
   CardButtons,
+  Radio,
   Video,
   CodeBox,
 };
