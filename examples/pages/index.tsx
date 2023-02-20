@@ -1,4 +1,4 @@
-import { Box, NotificationList, NotificationProps, NotificationStore } from "@neuralbertatech/react";
+import { Box, NotificationList, NotificationProps, NotificationStore, Video } from "@neuralbertatech/react";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -73,6 +73,8 @@ const Home: NextPage = () => {
           maxNotifications={3}
         />
       </main>
+
+      <Video file="https://media.w3.org/2010/05/sintel/trailer.mp4" controls={true}></Video>
     </div>
   );
 };
