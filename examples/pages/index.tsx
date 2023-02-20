@@ -1,4 +1,4 @@
-import { Box, NotificationList, NotificationProps, NotificationStore, Video, PDF } from "@neuralbertatech/react";
+import { Box, NotificationList, NotificationProps, NotificationStore, PDF, Video } from "@neuralbertatech/react";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -76,7 +76,12 @@ const Home: NextPage = () => {
 
       <Video file="https://media.w3.org/2010/05/sintel/trailer.mp4" controls={true}></Video>
 
-      <PDF file="https://assets.speakcdn.com/assets/2703/bulletin-may26.pdf"></PDF>
+      <div style={{
+        width: "100vw",
+        height: "400px"
+      }}>
+        <PDF file="https://assets.speakcdn.com/assets/2703/bulletin-may26.pdf"></PDF>
+      </div>
     </div>
   );
 };

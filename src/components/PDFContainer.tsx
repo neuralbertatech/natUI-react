@@ -15,7 +15,7 @@ interface PDFProps extends BaseProps {
 const PDF: FunctionComponent<PDFProps> = (props) => {
 
   return (
-    <iframe src={props.file} width="max-w-full" height="max-h-full">
+    <iframe src={props.file} className="w-full h-full">
     </iframe>
   );
 };
