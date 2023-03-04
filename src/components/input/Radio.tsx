@@ -13,22 +13,18 @@ export type RadioComponent = FunctionComponent<BaseRadioProps>
  * Radio Button Component
  * @component
  * @param name {string} Link multiple radio buttons to the same name
- * @param disabled {boolean} Disable the radio button
+ * @param [disabled=false] {boolean} Disable the radio button
  *
  * @author Yash Sunil Mouje <yash_mouje@hotmail.com>
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Radio: RadioComponent = (props) => {
-  const uniqueId = `${props.name}-${Math.round(Math.random() * 1000)}`;
+const Radio: RadioComponent = ({ name, disabled = false, children, style}) => {
+  const uniqueId = `${name}-${Math.round(Math.random() * 1000)}`;
 
   return <>
-    <input className="radio" type="radio" name={props.name} id={uniqueId} disabled={props.disabled} />
-    <label className="radio" htmlFor={uniqueId} style={props.style}>{props.children}</label>
+    <input className="radio" type="radio" name={name} id={uniqueId} disabled={disabled} />
+    <label className="radio" htmlFor={uniqueId} style={style}>{children}</label>
   </>;
-};
-
-Radio.defaultProps = {
-  disabled: false,
 };
 
 export default Radio;
