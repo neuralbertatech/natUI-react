@@ -36,23 +36,19 @@ interface CardProps extends BaseProps {
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Card: FunctionComponent<CardProps> = (props) => {
-  return <Box glass={props.glass}>
+const Card: FunctionComponent<CardProps> = ({ title, subtitle, date, glass = false, children }) => {
+  return <Box glass={glass}>
     <div className="columns is-gapless">
       <div className="column is-flex-grow-2">
-        <h2 className="title is-2">{props.title}</h2>
-        <h3 className="subtitle is-3">{props.subtitle}</h3>
+        <h2 className="title is-2">{title}</h2>
+        <h3 className="subtitle is-3">{subtitle}</h3>
       </div>
       <div className="column has-text-right">
-        <span >{props.date !== undefined && <DateViewWidget date={props.date} />}</span>
+        <span >{date !== undefined && <DateViewWidget date={date} />}</span>
       </div>
     </div>
-    {props.children}
+    {children}
   </Box>;
-};
-
-Card.defaultProps = {
-  glass: false
 };
 
 export default Card;

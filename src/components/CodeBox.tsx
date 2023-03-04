@@ -45,21 +45,21 @@ interface CodeBoxProps extends BaseProps {
  * @author Gareth War <garethwar@gmail.com>
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const CodeBox: FunctionComponent<CodeBoxProps> = (props) => {
+const CodeBox: FunctionComponent<CodeBoxProps> = ({ code, language, icon, style }) => {
   return (
-    <div style={props.style} className="code">
-      <Highlight className={props.language}>
-        {props.code}
+    <div style={style} className="code">
+      <Highlight className={language}>
+        {code}
       </Highlight>
       <div style={{
         position: "absolute",
         top: 2,
         right: 2,
       }}>
-        <CopyToClipboard text={props.code}>
+        <CopyToClipboard text={code}>
           <button className="button is-outlined is-dark" style={{
             border: "1px",
-          }}>{props.icon}</button>
+          }}>{icon}</button>
         </CopyToClipboard>
       </div>
     </div>

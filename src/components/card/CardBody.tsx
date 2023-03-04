@@ -9,10 +9,7 @@ export type CardBodyComponent = FunctionComponent<PropsWithChildren>;
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const CardBody: CardBodyComponent = (props) => {
-  return <p className="content">
-    {props.children}
-  </p>;
-};
+const CardBody: CardBodyComponent = ({ children }) =>
+  <p className="content">{children}</p>;
 
 export default CardBody;

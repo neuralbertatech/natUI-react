@@ -33,32 +33,30 @@ export interface InputTextProps extends InputProps<string> {
  * @todo add some hover tooltip to explain why input might be invalid (new prop field)
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const InputText: FunctionComponent<InputTextProps> = (props) => {
-  const [state, setState] = props.state;
+const InputText: FunctionComponent<InputTextProps> = ({ name, label, placeholder, state, icon, disabled, type = "text", validation }) => {
+  const [innerState, setState] = state;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState({
       value: event.target.value,
-      valid: props.validation?.test(event.target.value)
+      valid: validation?.test(event.target.value)
     });
   };
 
   return (
-    <InputWrapper label={props.label} icon={props.icon}>
+    <InputWrapper label={label} icon={icon}>
       <input
-        type={props.type}
-        id={props.name}
-        name={props.name}
-        className={`input ${stateClassName(state.valid)}`}
-        placeholder={props.placeholder}
-        value={state.value}
+        type={type}
+        id={name}
+        name={name}
+        className={`input ${stateClassName(innerState.valid)} ${disabled ? "disabled" : ""}`}
+        placeholder={placeholder}
+        value={innerState.value}
         onChange={onChange}
-        aria-invalid={state.valid === false}
+        aria-invalid={innerState.valid === false}
       />
     </InputWrapper>
   );
 };
-
-InputText.defaultProps = { type: "text" };
 
 export default InputText;

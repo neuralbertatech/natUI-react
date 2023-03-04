@@ -21,17 +21,13 @@ interface VideoProps extends BaseProps {
  *
  * @author Ganesh Saraswat <gsaraswa@ualberta.ca>
  */
-const Video: FunctionComponent<VideoProps> = (props) => {
+const Video: FunctionComponent<VideoProps> = ({ file, controls = true }) => {
   return (   
-    <video width="max-w-full" height="max-h-full" controls={props.controls}>
-      <source src={props.file}></source>
+    <video width="max-w-full" height="max-h-full" controls={controls}>
+      <source src={file}></source>
       Your browser does not support the video tag.
     </video>
   );
-};
-
-Video.defaultProps = {
-  controls:true
 };
 
 export default Video;

@@ -26,16 +26,12 @@ export type CardButtonGroupComponent = FunctionComponent<CardButtonsProps>
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const CardButtons: CardButtonGroupComponent = (props) => {
-  return Array.isArray(props.children)
-    ? <List orientation={props.orientation}>
-      {props.children}
+const CardButtons: CardButtonGroupComponent = ({ orientation = "vertical", children }) => {
+  return Array.isArray(children)
+    ? <List orientation={orientation}>
+      {children}
     </List>
-    : <>{props.children}</>;
-};
-
-CardButtons.defaultProps = {
-  orientation: "vertical"
+    : <>{children}</>;
 };
 
 export default CardButtons;

@@ -29,30 +29,30 @@ interface InputNumberProps extends InputProps<number> {
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const InputNumber: FunctionComponent<InputNumberProps> = (props) => {
-  const [state, setState] = props.state;
+const InputNumber: FunctionComponent<InputNumberProps> = ({ name, label, placeholder, state, icon, disabled, min, max }) => {
+  const [innerState, setState] = state;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.valueAsNumber;
     if (Number.isNaN(value)) return;
     setState({
       value: event.target.valueAsNumber,
-      valid: (props.min === undefined || value >= props.min) && (props.max === undefined || value <= props.max)
+      valid: (min === undefined || value >= min) && (max === undefined || value <= max)
     });
   };
 
   return (
-    <InputWrapper label={props.label} icon={props.icon}>
+    <InputWrapper label={label} icon={icon}>
       <input
         type="number"
-        id={props.name}
-        name={props.name}
-        className={`input ${stateClassName(state.valid)}`}
-        placeholder={props.placeholder}
-        value={state.value}
+        id={name}
+        name={name}
+        className={`input ${stateClassName(innerState.valid)} ${disabled ? "disabled" : ""}`}
+        placeholder={placeholder}
+        value={innerState.value}
         onChange={onChange}
-        min={props.min}
-        max={props.max} />
+        min={min}
+        max={max} />
     </InputWrapper>
   );
 };

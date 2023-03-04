@@ -92,36 +92,30 @@ export type ButtonComponent = FunctionComponent<ButtonProps>
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Button: ButtonComponent = (props) => {
+const Button: ButtonComponent = ({ text, onClick, href, icon, type, outlined = false, disabled = false, loading = false, style}) => {
   const commonProps = {
-    style: props.style,
+    style,
     className: `button
-          ${typeToClassName(props.type)}
-          ${props.outlined ? "is-outlined" : ""}
-          ${props.loading ? "is-loading" : ""}`,
-    disabled: props.disabled,
+          ${typeToClassName(type)}
+          ${outlined ? "is-outlined" : ""}
+          ${loading ? "is-loading" : ""}`,
+    disabled: disabled,
   };
   const innerDOM = (<>
-    {props.icon && <span className="icon">{props.icon}</span>}
-    <span>{props.text}</span>
+    {icon && <span className="icon">{icon}</span>}
+    <span>{text}</span>
   </>);
-  return (props.onClick) ?
+  return (onClick) ?
     (
-      <button {...commonProps} onClick={props.onClick}>
+      <button {...commonProps} onClick={onClick}>
         {innerDOM}
       </button>
     ) :
     (
-      <a {...commonProps} href={props.href}>
+      <a {...commonProps} href={href}>
         {innerDOM}
       </a>
     );
-};
-
-Button.defaultProps = {
-  outlined: false,
-  disabled: false,
-  loading: false
 };
 
 export default Button;
