@@ -1,6 +1,6 @@
 {
   "name": "@neuralbertatech/react",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "UI react framework built on top of natUI.",
   "keywords": [
@@ -35,7 +35,6 @@
     "@neuralbertatech/ui": "^0.1.5",
     "highlight.js": "^11.7.0",
     "react": "^18.2.0",
-    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
     "reflect-metadata": "^0.1.13"

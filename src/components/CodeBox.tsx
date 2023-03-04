@@ -1,7 +1,7 @@
 import type { FunctionComponent, ReactElement } from "react";
 
 import type BaseProps from "src/types";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 import Highlight from "react-highlight";
 
 type Language =
@@ -45,13 +45,15 @@ interface CodeBoxProps extends BaseProps {
  * @author Gareth War <garethwar@gmail.com>
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CodeBox: FunctionComponent<CodeBoxProps> = ({ code, language, icon, style }) => {
   return (
     <div style={style} className="code">
       <Highlight className={language}>
         {code}
       </Highlight>
-      <div style={{
+      {/* FIX: https://github.com/nkbt/react-copy-to-clipboard/issues/78 */}
+      {/* <div style={{
         position: "absolute",
         top: 2,
         right: 2,
@@ -61,7 +63,7 @@ const CodeBox: FunctionComponent<CodeBoxProps> = ({ code, language, icon, style 
             border: "1px",
           }}>{icon}</button>
         </CopyToClipboard>
-      </div>
+      </div> */}
     </div>
   );
 };
