@@ -5,11 +5,10 @@ export type CardBodyComponent = FunctionComponent<PropsWithChildren>;
 /**
  * CardButtons Component
  * @component
- * @param title {string} The title to display on the card.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
 const CardBody: CardBodyComponent = ({ children }) =>
-  <p className="content">{children}</p>;
+  <>{children}</>;
 
 export default CardBody;
