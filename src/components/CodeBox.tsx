@@ -1,6 +1,6 @@
 import type { FunctionComponent, ReactElement } from "react";
 
-import type BaseProps from "src/types";
+import type BaseProps from "../types";
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 import Highlight from "react-highlight";
 
