@@ -11,6 +11,7 @@ import Notification from "./components/notification/Notification";
 import NotificationList from "./components/notification/NotificationList";
 import type { NotificationProps } from "./components/notification/Notification";
 import { NotificationStore } from "./utils";
+import PDF from "./components/PDFContainer";
 import Video from "./components/Video";
 
 export {
@@ -31,4 +32,5 @@ export {
   Radio,
   Video,
   CodeBox,
+  PDF,
 };
