@@ -1,6 +1,6 @@
 import type { ChangeEvent, FunctionComponent } from "react";
 
-import BaseProps from "../types";
+import BaseProps from "../../types";
 
 /**
  * @interface
@@ -12,9 +12,11 @@ import BaseProps from "../types";
 interface CheckboxProps extends BaseProps{
   isChecked: boolean;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  lable: string;
+  children: string;
+  name: string;
 }
 
+export type CheckBoxComponent = FunctionComponent<CheckboxProps>
 /**
  * CheckBox component
  * @component
@@ -23,12 +25,13 @@ interface CheckboxProps extends BaseProps{
  * @parm onChange {event} onChange function handles change event
  * @author Frank(Ziang) Li <ziang6@ualberta.ca> 
  */
-const Checkbox: FunctionComponent<CheckboxProps> = (props: CheckboxProps) => {
+const Checkbox: CheckBoxComponent = ({children, isChecked = false, handleChange, name}) => {
+  const uniqueId = `${name}-${Math.round(Math.random() * 1000)}`;
   return (
     <div style={{margin:"5px"}}>
       <label >
-        {props.lable}
-        <input type="checkbox"  id={props.lable} checked={props.isChecked} onChange={props.handleChange} style={{marginLeft:"5px"}} />
+        <input className="checkbox" type="checkbox" name={name} id={uniqueId} checked={isChecked} onChange={handleChange} style={{marginLeft:"5px"}} />
+        <label className="checkbox" htmlFor={uniqueId}>{children}</label>
       </label>
     </div> 
 
