@@ -36,8 +36,8 @@ interface CardProps extends BaseProps {
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Card: FunctionComponent<CardProps> = ({ title, subtitle, date, glass = false, children }) => {
-  return <Box glass={glass}>
+const Card: FunctionComponent<CardProps> = ({ title, subtitle, date, glass = false, style, children }) => {
+  return <Box style={style} glass={glass}>
     <div className="columns is-gapless">
       <div className="column is-flex-grow-2">
         <h2 className="title is-2">{title}</h2>
