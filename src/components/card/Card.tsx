@@ -43,9 +43,9 @@ const Card: FunctionComponent<CardProps> = ({ title, subtitle, date, glass = fal
         <h2 className="title is-2">{title}</h2>
         <h3 className="subtitle is-3">{subtitle}</h3>
       </div>
-      <div className="column has-text-right">
-        <span >{date !== undefined && <DateViewWidget date={date} />}</span>
-      </div>
+      {date !== undefined && <div className="column has-text-right">
+        <span><DateViewWidget date={date} /></span>
+      </div>}
     </div>
     {children}
   </Box>;
