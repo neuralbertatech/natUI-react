@@ -28,12 +28,13 @@ export interface InputTextProps extends InputProps<string> {
  * @param [disabled] {disabled} Whether the input tag is disabled or not.
  * @param [type="text"] {"text" | "email" | "password"} The type of input tag to use.
  * @param [validation] {RegExp} The regex validation for the user input.
+ * @param [required=false] {boolean} If this field is required or not.
  *
  * @see {@link <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp>|MDN Docs}
  * @todo add some hover tooltip to explain why input might be invalid (new prop field)
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const InputText: FunctionComponent<InputTextProps> = ({ name, label, placeholder, state, icon, disabled, type = "text", validation }) => {
+const InputText: FunctionComponent<InputTextProps> = ({ name, label, placeholder, state, icon, disabled, type = "text", validation, required = false }) => {
   const [innerState, setState] = state;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,13 +45,14 @@ const InputText: FunctionComponent<InputTextProps> = ({ name, label, placeholder
   };
 
   return (
-    <InputWrapper label={label} icon={icon}>
+    <InputWrapper label={label} icon={icon} required={required}>
       <input
         type={type}
         id={name}
         name={name}
         className={`input ${stateClassName(innerState.valid)} ${disabled ? "disabled" : ""}`}
         placeholder={placeholder}
+        required={required}
         value={innerState.value}
         onChange={onChange}
         aria-invalid={innerState.valid === false}

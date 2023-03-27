@@ -48,10 +48,10 @@ const Home: NextPage = () => {
         height: "100vh"
       }}>
         <form>
-          <InputText label="Name" name="name" placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} icon={<span>🔍</span>} />
-          <InputEmail label="Email" name="email" placeholder="example@neuralberta.tech" state={[email, setEmail]} />
-          <InputPassword label="Password" name="password" placeholder="example@neuralberta.tech" state={[password, setPassword]} />
-          <InputNumber label="Age" name="age" placeholder="Email" state={[age, setAge]} min={0} max={5} />
+          <InputText label="Name" name="name" placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} icon={<span>🔍</span>} required />
+          <InputEmail label="Email" name="email" placeholder="example@neuralberta.tech" state={[email, setEmail]} required />
+          <InputPassword label="Password" name="password" placeholder="example@neuralberta.tech" state={[password, setPassword]} required />
+          <InputNumber label="Age" name="age" placeholder="Email" state={[age, setAge]} min={0} max={5} required />
         </form>
         <Button text="Log" onClick={() => console.table(form)} disabled={disableButton} />
       </main>

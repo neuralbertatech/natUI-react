@@ -21,6 +21,7 @@ export interface InputProps<T> {
   state: [InputState<T>, (value: InputState<T>) => any];
   icon?: ReactElement;
   disabled?: boolean;
+  required?: boolean;
 }
 
 /**
@@ -35,6 +36,7 @@ interface InputWrapperProps {
   label: string;
   children: ReactElement<FunctionComponent<InputProps<primitive>>>;
   icon?: ReactElement;
+  required?: boolean;
 }
 
 /**
@@ -95,19 +97,22 @@ const hasIconLeft = (icon: InputWrapperProps["icon"]) =>
  * @param placeholder {string} The input placeholder.
  * @param state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @param [icon] {ReactElement} The icon to display inside the input field.
- * @param [disabled] {disabled} Whether the input tag is disabled or not.
+ * @param [disabled] {boolean} Whether the input tag is disabled or not.
+ * @param [required=false] {boolean} Append an asterix to the label to show the required status of the field if set to true.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-export const InputWrapper: FunctionComponent<InputWrapperProps> = (props) => {
-  const { name } = props.children.props;
+export const InputWrapper: FunctionComponent<InputWrapperProps> = ({children, label, icon, required = false }) => {
+  const { name } = children.props;
   return (
     <>
-      <label htmlFor={name}>{props.label}</label>
-      <p className={`control ${hasIconLeft(props.icon)}`}>
-        {props.children}
-        {props.icon && <span className="icon is-left">
-          {props.icon}
+      <label htmlFor={name}>{label}
+        {required && <span style={{ userSelect: "none" }} className="has-text-danger"> *</span>}
+      </label>
+      <p className={`control ${hasIconLeft(icon)}`}>
+        {children}
+        {icon && <span className="icon is-left">
+          {icon}
         </span>}
       </p>
     </>

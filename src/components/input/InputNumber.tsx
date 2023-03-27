@@ -26,10 +26,11 @@ interface InputNumberProps extends InputProps<number> {
  * @param [disabled] {disabled} Whether the input tag is disabled or not.
  * @param [min] {number} Minimum number for validation.
  * @param [max] {number} Maximum number for validation.
+ * @param [required=false] {boolean} If this field is required or not.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const InputNumber: FunctionComponent<InputNumberProps> = ({ name, label, placeholder, state, icon, disabled, min, max }) => {
+const InputNumber: FunctionComponent<InputNumberProps> = ({ name, label, placeholder, state, icon, disabled, min, max, required = false }) => {
   const [innerState, setState] = state;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +43,7 @@ const InputNumber: FunctionComponent<InputNumberProps> = ({ name, label, placeho
   };
 
   return (
-    <InputWrapper label={label} icon={icon}>
+    <InputWrapper label={label} icon={icon} required={required}>
       <input
         type="number"
         id={name}
@@ -52,7 +53,9 @@ const InputNumber: FunctionComponent<InputNumberProps> = ({ name, label, placeho
         value={innerState.value}
         onChange={onChange}
         min={min}
-        max={max} />
+        max={max}
+        required={required}
+      />
     </InputWrapper>
   );
 };

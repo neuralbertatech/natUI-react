@@ -22,6 +22,7 @@ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$
  * @param state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @param [icon] {ReactElement} The icon to display inside the input field.
  * @param [disabled] {disabled} Whether the input tag is disabled or not.
+ * @param [required=false] {boolean} If this field is required or not.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
