@@ -1,6 +1,13 @@
 import type { FunctionComponent, ReactElement } from "react";
 
 /**
+ * @callback onChangeCallback
+ * @template T
+ * @param value {T} Input value
+ * @param [valid] {boolean} Whether the input is valid according to the regex.
+ */
+
+/**
  * @interface
  * @template T
  * @property name {string} The html name attribute for the input tag.
@@ -9,7 +16,7 @@ import type { FunctionComponent, ReactElement } from "react";
  * @property state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @property [icon] {ReactElement} The icon to display inside the input field.
  * @property [disabled] {disabled} Whether the input tag is disabled or not.
- * @property [onChange] {(value: string, valid?: boolean) => void} Listener that gets triggered when the value changes.
+ * @property [onChange] {onChangeCallback} Listener that gets triggered when the value changes.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */

@@ -29,7 +29,6 @@ export interface InputTextProps extends InputProps<string> {
  * @param [type="text"] {"text" | "email" | "password"} The type of input tag to use.
  * @param [validation] {RegExp} The regex validation for the user input.
  * @param [required=false] {boolean} If this field is required or not.
- * @param [onChange] {(value: string, valid?: boolean) => void} Listener that gets triggered when the value changes.
  *
  * @see {@link <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp>|MDN Docs}
  * @todo add some hover tooltip to explain why input might be invalid (new prop field)

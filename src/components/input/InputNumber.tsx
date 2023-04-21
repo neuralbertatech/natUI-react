@@ -27,7 +27,6 @@ interface InputNumberProps extends InputProps<number> {
  * @param [min] {number} Minimum number for validation.
  * @param [max] {number} Maximum number for validation.
  * @param [required=false] {boolean} If this field is required or not.
- * @param [onChange] {(value: string, valid?: boolean) => void} Listener that gets triggered when the value changes.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
