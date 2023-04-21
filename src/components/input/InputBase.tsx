@@ -1,7 +1,5 @@
 import type { FunctionComponent, ReactElement } from "react";
 
-type primitive = string | number | boolean;
-
 /**
  * @interface
  * @template T
@@ -11,6 +9,7 @@ type primitive = string | number | boolean;
  * @property state {Array<InputState<T>, React.Dispatch<React.SetStateAction<InputState<T>>>>} The state for the input. Can be created with useState<InputState<?>>().
  * @property [icon] {ReactElement} The icon to display inside the input field.
  * @property [disabled] {disabled} Whether the input tag is disabled or not.
+ * @property [onChange] {(value: string, valid?: boolean) => void} Listener that gets triggered when the value changes.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
@@ -18,23 +17,24 @@ export interface InputProps<T> {
   name: string;
   label: string;
   placeholder: string;
-  state: [InputState<T>, (value: InputState<T>) => any];
   icon?: ReactElement;
   disabled?: boolean;
   required?: boolean;
+  onChange?: (value: T, validation?: boolean) => void;
 }
 
 /**
  * @interface
+ * @template T
  * @property label {string} The text for the html label tag.
- * @property children {ReactElement<FunctionComponent<InputProps<primitive>>>} Component which takes {@link InputProps} for arguments.
+ * @property children {ReactElement<FunctionComponent<InputProps>>} Component which takes {@link InputProps} for arguments.
  * @property [icon] {ReactElement} The icon to display inside the input field.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-interface InputWrapperProps {
+interface InputWrapperProps<T> {
   label: string;
-  children: ReactElement<FunctionComponent<InputProps<primitive>>>;
+  children: ReactElement<FunctionComponent<InputProps<T>>>;
   icon?: ReactElement;
   required?: boolean;
 }
@@ -87,11 +87,12 @@ export const stateClassName = (state: boolean | undefined) => {
   }
 };
 
-const hasIconLeft = (icon: InputWrapperProps["icon"]) =>
+const hasIconLeft = (icon: InputWrapperProps<unknown>["icon"]) =>
   icon === undefined ? "" : "has-icons-left";
 
 /**
  * Input Wrapper Component
+ * @template T
  * @param name {string} The html name attribute for the input tag.
  * @param label {string} The text for the html label tag.
  * @param placeholder {string} The input placeholder.
@@ -102,7 +103,7 @@ const hasIconLeft = (icon: InputWrapperProps["icon"]) =>
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-export const InputWrapper: FunctionComponent<InputWrapperProps> = ({children, label, icon, required = false }) => {
+export const InputWrapper: FunctionComponent<InputWrapperProps<unknown>> = ({children, label, icon, required = false }) => {
   const { name } = children.props;
   return (
     <>

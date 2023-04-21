@@ -3,8 +3,9 @@ import type { FunctionComponent } from "react";
 
 interface BaseRadioProps extends BaseProps {
   children: string;
-  disabled?: boolean;
   name: string;
+  disabled?: boolean;
+  onChange?: (value: string) => void;
 }
 
 
