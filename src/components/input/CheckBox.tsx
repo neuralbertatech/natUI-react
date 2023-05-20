@@ -25,14 +25,12 @@ export type CheckBoxComponent = FunctionComponent<CheckboxProps>
  * @parm onChange {event} onChange function handles change event
  * @author Frank(Ziang) Li <ziang6@ualberta.ca> 
  */
-const Checkbox: CheckBoxComponent = ({children, isChecked = false, handleChange, name}) => {
+const Checkbox: CheckBoxComponent = ({children, isChecked = false, handleChange, name, style}) => {
   const uniqueId = `${name}-${Math.round(Math.random() * 1000)}`;
   return (
-    <div style={{margin:"5px"}}>
-      <label >
-        <input className="checkbox" type="checkbox" name={name} id={uniqueId} checked={isChecked} onChange={handleChange} style={{marginLeft:"5px"}} />
-        <label className="checkbox" htmlFor={uniqueId}>{children}</label>
-      </label>
+    <div>
+      <input className="checkbox" type="checkbox" name={name} id={uniqueId} checked={isChecked} onChange={handleChange}/>
+      <label className="checkbox" htmlFor={uniqueId} style={style}>{children}</label>
     </div> 
 
   );
