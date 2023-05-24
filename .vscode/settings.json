@@ -1,14 +1,5 @@
 {
 	"editor.tabSize": 2,
 	"editor.detectIndentation": true,
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"emeraldwalk.runonsave": {
-		"commands": [
-			{
-				"match": "(src|better-docs)/",
-				"isAsync": true,
-				"cmd": "yarn docs"
-			}
-		]
-	}
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
