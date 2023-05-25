@@ -22,17 +22,13 @@ interface BoxProps extends BaseProps {
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const Box: FunctionComponent<BoxProps> = (props) => {
-  const glassEfect = props.glass ? "is-glass" : "";
+const Box: FunctionComponent<BoxProps> = ({ glass = false, children, style }) => {
+  const glassEfect = glass ? "is-glass" : "";
   return (
-    <div className={`box ${glassEfect}`} style={props.style} >
-      {props.children}
+    <div className={`box ${glassEfect}`} style={style} >
+      {children}
     </div>
   );
-};
-
-Box.defaultProps = {
-  glass: false
 };
 
 export default Box;

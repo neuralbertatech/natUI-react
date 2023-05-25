@@ -25,26 +25,22 @@ interface NotificationListProps extends BaseProps {
  * @param notifications {NotificationProps[]} The notifications to display.
  * @param [maxNotifications=5] {numbe} Maximum amount of notification to display at once. Will display the first n notifications.
  * @param [maxTime=5000] {number} The maximum amount of time a notification should be on screen for.
+ * @param [reversed=true] {boolean} Whether the order is reversed or not.
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const NotificationList: FunctionComponent<NotificationListProps> = (props) => {
-  const items = props.notifications
-    .slice(0, props.maxNotifications)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const NotificationList: FunctionComponent<NotificationListProps> = ({ notifications, maxNotifications = 5, maxTime = 5000, reversed = true, style }) => {
+  const items = notifications
+    .slice(0, maxNotifications)
     .map((notificationProp, i) => {
       return <Notification {...notificationProp} key={i} />;
     });
   return (
-    <List style={{ ...props.style, gap: 16 }} reversed={props.reversed}>
+    <List style={{ ...style, gap: 16 }} reversed={reversed}>
       {items}
     </List>
   );
-};
-
-NotificationList.defaultProps = {
-  maxNotifications: 5,
-  maxTime: 5000,
-  reversed: false
 };
 
 export default NotificationList;

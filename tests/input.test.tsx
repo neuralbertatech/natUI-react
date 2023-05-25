@@ -14,16 +14,11 @@ jest.mock("react", () => ({
 describe("Text Input Component", () => {
   const setState = jest.fn();
   let rendered: RenderResult;
-  let state: [
-    InputState<string>,
-    React.Dispatch<React.SetStateAction<InputState<string>>>
-  ];
 
   beforeEach(() => {
     (useStateMock as jest.Mock).mockImplementation(init => [init, setState]);
-    state = useStateMock({ value: "" });
     rendered = render(
-      <InputText name="name" label="Name" placeholder="name" state={state} validation={/\w\d\w/} data-testid="name" />
+      <InputText name="name" label="Name" placeholder="name" validation={/\w\d\w/} data-testid="name" />
     );
   });
 
@@ -40,16 +35,11 @@ describe("Text Input Component", () => {
 describe("Email Input Component", () => {
   const setState = jest.fn();
   let rendered: RenderResult;
-  let state: [
-    InputState<string>,
-    React.Dispatch<React.SetStateAction<InputState<string>>>
-  ];
 
   beforeEach(() => {
     (useStateMock as jest.Mock).mockImplementation(init => [init, setState]);
-    state = useStateMock({ value: "" });
     rendered = render(
-      <InputEmail name="email" label="Email" placeholder="email" state={state} />
+      <InputEmail name="email" label="Email" placeholder="email" />
     );
   });
 
@@ -62,16 +52,11 @@ describe("Email Input Component", () => {
 describe("Password Input Component", () => {
   const setState = jest.fn();
   let rendered: RenderResult;
-  let state: [
-    InputState<string>,
-    React.Dispatch<React.SetStateAction<InputState<string>>>
-  ];
 
   beforeEach(() => {
     (useStateMock as jest.Mock).mockImplementation(init => [init, setState]);
-    state = useStateMock({ value: "" });
     rendered = render(
-      <InputPassword name="password" label="Password" placeholder="password" state={state} />
+      <InputPassword name="password" label="Password" placeholder="password" />
     );
   });
 
@@ -84,16 +69,11 @@ describe("Password Input Component", () => {
 describe("Password Input Component", () => {
   const setState = jest.fn();
   let rendered: RenderResult;
-  let state: [
-    InputState<number>,
-    React.Dispatch<React.SetStateAction<InputState<number>>>
-  ];
 
   beforeEach(() => {
     (useStateMock as jest.Mock).mockImplementation(init => [init, setState]);
-    state = useStateMock({ value: 0 });
     rendered = render(
-      <InputNumber name="number" label="Number" placeholder="number" state={state} />
+      <InputNumber name="number" label="Number" placeholder="number" />
     );
   });
 

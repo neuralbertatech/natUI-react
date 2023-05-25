@@ -27,9 +27,9 @@ type FlexDirection = "row" | "column" | "row-reverse" | "column-reverse";
  *
  * @author Giancarlo Pernudi Segura <gino@neuralberta.tech>
  */
-const List: FunctionComponent<ListProps> = (props) => {
-  const direction = (props.orientation === "horizontal" ? "row" : "column")
-    + (props.reversed ? "-reverse" : "") as FlexDirection;
+const List: FunctionComponent<ListProps> = ({ children, orientation = "vertical", reversed = false, style }) => {
+  const direction = (orientation === "horizontal" ? "row" : "column")
+    + (reversed ? "-reverse" : "") as FlexDirection;
   const combinedStyle: CSSProperties = {
     ...{
       display: "flex",
@@ -37,9 +37,9 @@ const List: FunctionComponent<ListProps> = (props) => {
       alignItems: "center",
       gap: 16
     },
-    ...props.style
+    ...style
   };
-  const items = props.children.map((item, i) => (
+  const items = children.map((item, i) => (
     <li key={i} style={{ listStyle: "none", width: "100%" }}>
       {item}
     </li>
@@ -49,11 +49,6 @@ const List: FunctionComponent<ListProps> = (props) => {
       {items}
     </div>
   );
-};
-
-List.defaultProps = {
-  orientation: "vertical",
-  reversed: false
 };
 
 export default List;

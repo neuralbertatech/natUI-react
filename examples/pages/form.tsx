@@ -1,5 +1,4 @@
 import { Button, InputEmail, InputNumber, InputPassword, InputText } from "@neuralbertatech/react";
-import { DEFAULT_INPUT_STATE_NUMBER, DEFAULT_INPUT_STATE_STRING } from "@neuralbertatech/react/lib/components/input/InputBase";
 import { useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -9,31 +8,30 @@ import type { NextPage } from "next";
 interface Form {
   name: InputState<string>;
   email: InputState<string>;
+  password: InputState<string>;
   age: InputState<number>;
 }
 
 const Home: NextPage = () => {
-  const [name, setName] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
-  const [email, setEmail] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
-  const [password, setPassword] = useState<InputState<string>>(DEFAULT_INPUT_STATE_STRING);
-  const [age, setAge] = useState<InputState<number>>(DEFAULT_INPUT_STATE_NUMBER);
   const [form, setForm] = useState<Form>({
-    name,
-    email,
-    age,
+    name: "",
+    email: "",
+    password: "",
+    age: 0,
   });
   const [disableButton, setDisableButton] = useState(true);
 
   useEffect(() => {
-    const tempForm = {
-      name,
-      email,
-      age,
-    };
-    setForm(tempForm);
-    setDisableButton(Object.values(tempForm)
-      .some((value) => value.valid === false));
-  }, [name, email, age]);
+    setForm(form);
+    setDisableButton(Object.values(form)
+      .some(value => value.current?.getState().valid === false));
+  }, [form]);
+
+  const setFormField = <T,>(field: keyof Form, value: T) => {
+    const temp = { ...form };
+    temp[field] = value;
+    setForm(temp);
+  };
 
   return (
     <div>
@@ -48,10 +46,51 @@ const Home: NextPage = () => {
         height: "100vh"
       }}>
         <form>
-          <InputText label="Name" name="name" placeholder="Boaty McBoatface" validation={/\w+\s\w+/} state={[name, setName]} icon={<span>🔍</span>} />
-          <InputEmail label="Email" name="email" placeholder="example@neuralberta.tech" state={[email, setEmail]} />
-          <InputPassword label="Password" name="password" placeholder="example@neuralberta.tech" state={[password, setPassword]} />
-          <InputNumber label="Age" name="age" placeholder="Email" state={[age, setAge]} min={0} max={5} />
+          <InputText
+            label="Name"
+            name="name"
+            placeholder="Boaty McBoatface"
+            onChange={(value, valid) => {
+              if (valid === true) {
+                setFormField("name", value);
+              }
+            }}
+            validation={/\w+\s\w+/}
+            icon={<span>🔍</span>}
+            required
+          />
+          <InputEmail
+            label="Email"
+            name="email"
+            placeholder="example@neuralberta.tech"
+            onChange={(value, valid) => {
+              if (valid === true) {
+                setFormField("email", value);
+              }
+            }}
+            required
+          />
+          <InputPassword
+            label="Password"
+            name="password"
+            placeholder="example@neuralberta.tech"
+            onChange={(value, valid) => {
+              if (valid === true) {
+                setFormField("password", value);
+              }
+            }}
+            required
+          />
+          <InputNumber
+            label="Age"
+            name="age"
+            placeholder="Email" min={0} max={5}
+            onChange={(value, valid) => {
+              if (valid === true) {
+                setFormField("age", value);
+              }
+            }}
+            required />
         </form>
         <Button text="Log" onClick={() => console.table(form)} disabled={disableButton} />
       </main>

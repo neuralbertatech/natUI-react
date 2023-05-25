@@ -5,9 +5,9 @@ interface DateViewWidgetProps {
   date: Date;
 }
 
-export const DateViewWidget: FunctionComponent<DateViewWidgetProps> = (props) => {
-  const shortDate = props.date.toLocaleDateString();
-  const longDate = props.date.toString();
+export const DateViewWidget: FunctionComponent<DateViewWidgetProps> = ({ date }) => {
+  const shortDate = date.toLocaleDateString();
+  const longDate = date.toString();
   const [hovering, setHovering] = useState(false);
   return <span
     style={{ position: "relative" }}
