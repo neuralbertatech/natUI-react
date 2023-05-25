@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <title>CheckBox test</title>
       </Head>
       <main style={{padding: "32px"}}>
-        <CheckBox name="test" isChecked={isCheckedtest} handleChange={handletestbox} style={{margin :"2ex"}}> test_test </CheckBox>
+        <CheckBox name="test" isChecked={isCheckedtest} handleChange={handletestbox}> test_test </CheckBox>
       </main>
     </>
   );

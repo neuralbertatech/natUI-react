@@ -28,9 +28,9 @@ export type CheckBoxComponent = FunctionComponent<CheckboxProps>
 const Checkbox: CheckBoxComponent = ({children, isChecked = false, handleChange, name, style}) => {
   const uniqueId = `${name}-${Math.round(Math.random() * 1000)}`;
   return (
-    <div>
+    <div style={style}>
       <input className="checkbox" type="checkbox" name={name} id={uniqueId} checked={isChecked} onChange={handleChange}/>
-      <label className="checkbox" htmlFor={uniqueId} style={style}>{children}</label>
+      <label className="checkbox" htmlFor={uniqueId} style={{margin: "2ex"}}>{children}</label>
     </div> 
 
   );
