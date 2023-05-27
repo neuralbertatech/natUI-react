@@ -5,6 +5,7 @@ import Button from "./components/Button";
 import Card from "./components/card/Card";
 import CardBody from "./components/card/CardBody";
 import CardButtons from "./components/card/CardButton";
+import CheckBox from "./components/input/CheckBox";
 import List from "./components/List";
 import Notification from "./components/notification/Notification";
 import NotificationList from "./components/notification/NotificationList";
@@ -27,6 +28,7 @@ export {
   Card,
   CardBody,
   CardButtons,
+  CheckBox,
   Radio,
   Video,
 };
